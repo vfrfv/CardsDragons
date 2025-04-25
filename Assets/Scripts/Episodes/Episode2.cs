@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Episode2 : MonoBehaviour
+public class Episode2 : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject _arm;
     [SerializeField] private RectTransform _points;
