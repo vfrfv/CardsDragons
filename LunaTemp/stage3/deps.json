@@ -1,0 +1,19 @@
+{
+  "ignores": [],
+  "groups": [
+    [
+      "D:/UnityPri/CardsDragons/LunaTemp/stage3/processed-scripts/Assets/Scripts/Episodes/Episode1.cs",
+      "D:/UnityPri/CardsDragons/LunaTemp/stage3/processed-scripts/Assets/Scripts/Scenario.cs",
+      "D:/UnityPri/CardsDragons/LunaTemp/stage3/processed-scripts/Assets/Scripts/Episodes/Episode2.cs"
+    ],
+    [
+      "D:/Luna/PA/pipeline/templates/LunaCompiler/Scripts/Properties/AssemblyInfo.cs"
+    ],
+    [
+      "D:/Luna/PA/pipeline/templates/LunaCompiler/Scripts/Sources/OtherDummyScript.cs"
+    ],
+    [
+      "D:/Luna/PA/pipeline/templates/LunaCompiler/Scripts/obj/Debug/.NETFramework,Version=v4.7.AssemblyAttributes.cs"
+    ]
+  ]
+}

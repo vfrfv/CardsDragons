@@ -1,0 +1,259 @@
+report@config:load 69.36
+Authorized using stored user info.
+report@account:authorize 17.75
+stderr: "rm" �� ���� ����७��� ��� ���譥�
+��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
+
+Exporting assets from Unity.........
+
+[ Stage1 ] Assets exported from Unity and staged for further processing
+report@unity:export 6104.89
+report@config:load 34.45
+[ error ] $Failed to locate TTF file for the font named LegacyRuntime – falling back to Arial substitute.
+Using C:/Windows/Fonts/arial.ttf file to generate an atlas for LegacyRuntime[692] font
+  Using alphabet  §1234567890-=qwertyuiop[]asdfghjkl;'\`zxcvbnm,./±!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:"|~ZXCVBNM<>?
+Combined 97 glyphs into bitmap texture at D:/UnityPri/CardsDragons/LunaTemp/stage1/tmp/fonts/LegacyRuntime-692/output_0.png (59kb)
+Resources:
+{}
+report@assets:stage2 8438.77
+report@assets:stage3 357.81
+[ Stage2 ] Assets postprocessed and bundled successfully
+report@config:unity 0.21
+report@config:load 65.22
+report@config:unity 0.28
+report@code:compose 223.50
+Authorized using stored user info.
+report@account:authorize 8.54
+Версия MSBuild 17.11.9+a69bbaaf5 для .NET Framework
+
+Сборка начата 25.04.2025 16:52:56.
+
+
+
+Проект "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj" в узле 1 (целевые объекты Rebuild).
+
+CoreClean:
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityScriptsCompiler.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityScriptsCompiler.pdb" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\DOTween.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\JetBrains.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\TextMeshPro.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UI.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UniversalRenderPipeline.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.xml" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.AssemblyReference.cache" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.CoreCompileInputs.cache" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.Up2Date" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\UnityScriptsCompiler.dll" удаляется.
+
+  Файл "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\UnityScriptsCompiler.pdb" удаляется.
+
+GenerateTargetFrameworkMonikerAttribute:
+Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
+
+CoreCompile:
+  C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:CS0626,1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4 /define:UNITY_LUNA;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_2022;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2022_3;UNITY_2022_3_49 /highentropyva+ /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.42-luna\lib\net40\Bridge.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\DOTween.1.2.705\lib\net40\DOTween.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.ide.rider\3.0.0\JetBrains.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.textmeshpro\3.0.6\TextMeshPro.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Vendor\UnityEngine.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll /reference:D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.urp\7.6\UnityEngine.UniversalRenderPipeline.dll /debug+ /debug:full /optimize- /out:obj\Debug\UnityScriptsCompiler.dll /subsystemversion:6.00 /target:library /warnaserror- /utf8output /langversion:8 D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Scenario.cs Properties/AssemblyInfo.cs Sources/OtherDummyScript.cs "obj\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs"
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Scenario.cs(6,39): warning CS0649: Полю "Scenario._episode2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(15,35): warning CS0649: Полю "Episode2._textCoins" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(19,41): warning CS0649: Полю "Episode2._textDamage2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(12,44): warning CS0649: Полю "Episode2._unit2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(14,35): warning CS0649: Полю "Episode1._textDamage" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(11,44): warning CS0649: Полю "Episode2._unit1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(18,41): warning CS0649: Полю "Episode2._textHealth2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(17,35): warning CS0649: Полю "Episode2._textHealth" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(16,35): warning CS0649: Полю "Episode2._textDamage" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(14,45): warning CS0649: Полю "Episode2._particleSystem2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(15,35): warning CS0649: Полю "Episode1._textHealth" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(9,41): warning CS0649: Полю "Episode2._arm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(12,45): warning CS0649: Полю "Episode1._particleSystem" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(11,44): warning CS0649: Полю "Episode1._unit" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(17,41): warning CS0649: Полю "Episode1._textDamage2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(10,44): warning CS0649: Полю "Episode1._points" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Scenario.cs(5,39): warning CS0649: Полю "Scenario._episode1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(9,41): warning CS0649: Полю "Episode1._arm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(16,41): warning CS0649: Полю "Episode1._textHealth2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(13,45): warning CS0649: Полю "Episode2._particleSystem1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(13,35): warning CS0649: Полю "Episode1._textCoins" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(10,44): warning CS0649: Полю "Episode2._points" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+  CompilerServer: server - server processed compilation - Scripts
+
+_CopyFilesMarkedCopyLocal:
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.42-luna\lib\net40\Bridge.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.dll".
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.ide.rider\3.0.0\JetBrains.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\JetBrains.dll".
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.dll".
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\DOTween.1.2.705\lib\net40\DOTween.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\DOTween.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.dll".
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.textmeshpro\3.0.6\TextMeshPro.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\TextMeshPro.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Vendor\UnityEngine.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.urp\7.6\UnityEngine.UniversalRenderPipeline.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UniversalRenderPipeline.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\com.unity.ui\1.2.1\UnityEngine.UI.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityEngine.UI.dll".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Core.17.9.42-luna\lib\net40\Bridge.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Html5.17.9.0\lib\net40\Bridge.Html5.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.Html5.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.WebGL.1.22.0\lib\net40\Bridge.WebGL.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Bridge.WebGL.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Bridge.Newtonsoft.Json.1.16.0\lib\net40\Newtonsoft.Json.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Newtonsoft.Json.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.Core.1.6.6733\lib\net40\Retyped.Core.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.Core.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.dom.2.8.6733\lib\net40\Retyped.dom.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.dom.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.es5.2.8.6733\lib\net40\Retyped.es5.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.es5.xml".
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\packages\Retyped.scripthost.2.8.6733\lib\net40\Retyped.scripthost.xml" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\Retyped.scripthost.xml".
+
+  Создание "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.Up2Date", так как было задано "AlwaysCreate".
+
+  Обращение к "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\Scripts.csproj.Up2Date".
+
+CopyFilesToOutputDirectory:
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\UnityScriptsCompiler.dll" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityScriptsCompiler.dll".
+
+  Scripts -> D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityScriptsCompiler.dll
+
+  Копирование файла из "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\obj\Debug\UnityScriptsCompiler.pdb" в "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\bin\Debug\UnityScriptsCompiler.pdb".
+
+BridgeNetCompilerTask:
+  Bridge started
+
+      To enable detailed logging, configure "logging" in bridge.json.
+      https://github.com/bridgedotnet/Bridge/wiki/global-configuration#logging
+
+  Bridge done
+
+Сборка проекта "D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj" завершена (целевые объекты Rebuild).
+
+
+Сборка успешно завершена.
+
+
+
+"D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj" (целевой объект Rebuild ) (1) ->
+(Целевой объект CoreCompile) -> 
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Scenario.cs(6,39): warning CS0649: Полю "Scenario._episode2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(15,35): warning CS0649: Полю "Episode2._textCoins" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(19,41): warning CS0649: Полю "Episode2._textDamage2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(12,44): warning CS0649: Полю "Episode2._unit2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(14,35): warning CS0649: Полю "Episode1._textDamage" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(11,44): warning CS0649: Полю "Episode2._unit1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(18,41): warning CS0649: Полю "Episode2._textHealth2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(17,35): warning CS0649: Полю "Episode2._textHealth" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(16,35): warning CS0649: Полю "Episode2._textDamage" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(14,45): warning CS0649: Полю "Episode2._particleSystem2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(15,35): warning CS0649: Полю "Episode1._textHealth" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(9,41): warning CS0649: Полю "Episode2._arm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(12,45): warning CS0649: Полю "Episode1._particleSystem" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(11,44): warning CS0649: Полю "Episode1._unit" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(17,41): warning CS0649: Полю "Episode1._textDamage2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(10,44): warning CS0649: Полю "Episode1._points" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Scenario.cs(5,39): warning CS0649: Полю "Scenario._episode1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(9,41): warning CS0649: Полю "Episode1._arm" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(16,41): warning CS0649: Полю "Episode1._textHealth2" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(13,45): warning CS0649: Полю "Episode2._particleSystem1" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode1.cs(13,35): warning CS0649: Полю "Episode1._textCoins" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+  D:\UnityPri\CardsDragons\LunaTemp\stage3\processed-scripts\Assets\Scripts\Episodes\Episode2.cs(10,44): warning CS0649: Полю "Episode2._points" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию null. [D:\Luna\PA\pipeline\templates\LunaCompiler\Scripts\Scripts.csproj]
+
+
+    Предупреждений: 22
+    Ошибок: 0
+
+Прошло времени 00:00:16.44
+
+Source code compiled successfully!
+﻿
+[ error ] $﻿
+PHC: LP error code not found in JSON: 3015, JSON file might be outdated. Error message: Sequence contains no matching element
+
+Diagnostics gathered successfully
+report@code:build 26221.48
+report@diagnostics:verify 0.69
+report@diagnostics:upload 1579.74
+report@code:stage 16823.17
+[ Stage3 ] Code compiled and bundled successfully.
+report@code:bundle 44929.16
+report@package:stage 1927.03
+[ Stage4 ] Target platform: develop
+[ Stage4 ] Package bundled successfully
+report@assets:stats 0.38
