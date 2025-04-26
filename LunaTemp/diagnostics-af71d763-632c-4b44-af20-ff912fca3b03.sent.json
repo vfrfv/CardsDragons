@@ -1,24 +1,24 @@
 {
-    "BuildID": "6994b52c-3bc3-4aae-9690-b74e4afe08cb",
-    "Command": "project:build",
+    "BuildID": "af71d763-632c-4b44-af20-ff912fca3b03",
+    "Command": "project:deploy",
     "ProjectID": "44c3daab4de35354e9e92df1696c57a0",
-    "ProjectStateHash": "da04a21fda4ed0c035b5bd51291d29d99534cd214d4e6489f04e9c10448f4789",
+    "ProjectStateHash": "0518be3f6eb0564d094e939c9568b7a7c358ece7dd1d8c96c1209ed5133a3bb8",
     "StageCompletedAt": 3,
     "EarliestFatalError": 0,
-    "StartTime": 1745589155358,
-    "EndTime": 1745589197455,
+    "StartTime": 1745591623754,
+    "EndTime": 1745591690924,
     "PlaygroundUserID": 21453,
     "OperatingSystem": "win32",
     "UnityPackageID": null,
-    "TargetPlatform": "develop",
+    "TargetPlatform": "playground",
     "UnityVersion": "2022.3.49f1",
     "LunaVersion": "6.2.1",
     "LogCount": 9,
     "Logs": [
         {
-            "LogID": "28a69f9b-7b87-4c1e-8903-dbabefdd32d8",
+            "LogID": "07dd78ae-d26c-40a7-948f-a440622c4675",
             "Order": 6,
-            "Timestamp": 1745589197661,
+            "Timestamp": 1745591691233,
             "Stage": 3,
             "ErrorType": 1,
             "ErrorCode": "LP3006",
@@ -42,9 +42,9 @@
             "Severity": 0
         },
         {
-            "LogID": "626fd4b8-8de8-454d-b6f2-417506f271fe",
+            "LogID": "2abafb04-eab1-40f9-9bd5-e044ff2bf211",
             "Order": 6,
-            "Timestamp": 1745589197661,
+            "Timestamp": 1745591691237,
             "Stage": 3,
             "ErrorType": 1,
             "ErrorCode": "LP3015",
@@ -68,9 +68,9 @@
             "Severity": 0
         },
         {
-            "LogID": "7710cdfd-70c2-4b59-9cbd-98a969731ac6",
+            "LogID": "b18c9ad0-0b04-4b9d-bb3c-edab8bd9e770",
             "Order": 6,
-            "Timestamp": 1745589197661,
+            "Timestamp": 1745591691237,
             "Stage": 3,
             "ErrorType": 3,
             "ErrorCode": "LP3007",
@@ -92,9 +92,9 @@
             "Severity": 0
         },
         {
-            "LogID": "e62937f6-5301-4825-bd8f-08d3905bc023",
+            "LogID": "f6bede54-5d66-49ed-a4f2-5bd292ab3d1f",
             "Order": 6,
-            "Timestamp": 1745589197661,
+            "Timestamp": 1745591691239,
             "Stage": 3,
             "ErrorType": 3,
             "ErrorCode": "LP3011",
@@ -112,9 +112,9 @@
             "Severity": 0
         },
         {
-            "LogID": "bbfdd676-cdc8-4f37-9906-a85855b05902",
+            "LogID": "761179f8-9f94-49f3-9b6f-a2322b5bef6e",
             "Order": 0,
-            "Timestamp": 1745589162061,
+            "Timestamp": 1745591646618,
             "Stage": 1,
             "ErrorType": 0,
             "ErrorCode": "LP1006",
@@ -132,9 +132,9 @@
             "Severity": 0
         },
         {
-            "LogID": "975c2efd-6f23-4a07-880c-65c6d9c516be",
+            "LogID": "2eb11b5a-8147-418a-9ade-1e98021133c9",
             "Order": 1,
-            "Timestamp": 1745589162061,
+            "Timestamp": 1745591646618,
             "Stage": 1,
             "ErrorType": 2,
             "ErrorCode": "LP1014",
@@ -152,15 +152,15 @@
             "Severity": 0
         },
         {
-            "LogID": "72e6b032-24a2-48d6-ad2e-305478bba230",
+            "LogID": "596cd11a-a581-42c1-8e91-f9df1812c77b",
             "Order": 2,
-            "Timestamp": 1745589162061,
+            "Timestamp": 1745591646618,
             "Stage": 1,
             "ErrorType": 2,
             "ErrorCode": "LP1016",
             "Description": "Extensive usage of ParticleSystem Component",
             "Details": [
-                "There is extensive usage of the ParticleSystem component.\nExcessive usage of any component can be detrimental to performance on lower and in some cases higher end devices, consider reducing the amount the component is used.\nRecommended count: 10, current count 25."
+                "There is extensive usage of the ParticleSystem component.\nExcessive usage of any component can be detrimental to performance on lower and in some cases higher end devices, consider reducing the amount the component is used.\nRecommended count: 10, current count 40."
             ],
             "DescriptionValues": [
                 "ParticleSystem"
@@ -168,7 +168,7 @@
             "DetailsValues": [
                 "ParticleSystem",
                 "10",
-                "25"
+                "40"
             ],
             "LogCount": 1,
             "LinePosition": 0,
@@ -178,9 +178,9 @@
             "Severity": 0
         },
         {
-            "LogID": "3fdcb58b-1abe-45b1-977d-2f83f89614c3",
+            "LogID": "8dbebdb9-8566-49f5-95c9-9158cf96a397",
             "Order": 3,
-            "Timestamp": 1745589162071,
+            "Timestamp": 1745591646640,
             "Stage": 1,
             "ErrorType": 0,
             "ErrorCode": "LP1015",
@@ -200,9 +200,9 @@
             "Severity": 0
         },
         {
-            "LogID": "e33a5e98-8cf0-4d7c-8845-c37417cdc40c",
+            "LogID": "a8346f48-a2b9-469c-aa70-f0b2b9719812",
             "Order": 4,
-            "Timestamp": 1745589162071,
+            "Timestamp": 1745591646641,
             "Stage": 1,
             "ErrorType": 0,
             "ErrorCode": "LP1032",

@@ -1,6 +1,6 @@
-if ( TRACE ) { TRACE( JSON.parse( '["Episode1#init","Episode1#OnEnable","Episode1#OnPointerClick","Episode1#AnimateCard","Episode1#ScaleTo","Episode1#MoveTo","Episode2#init","Episode2#OnEnable","Episode2#OnPointerClick","Episode2#AnimateCard","Episode2#ScaleTo","Episode2#MoveTo","Scenario#OnEnable","Scenario#OnDisable","Scenario#Start","Scenario#TurnEpisode2"]' ) ); }
+if ( TRACE ) { TRACE( JSON.parse( '["Episode1#init","Episode1#OnEnable","Episode1#OnPointerClick","Episode1#AnimateCard","Episode1#ScaleTo","Episode1#MoveTo","Episode2#init","Episode2#OnEnable","Episode2#OnPointerClick","Episode2#AnimateCard","Episode2#ScaleTo","Episode2#MoveTo","Episode3#OnEnable","Episode3#OnPointerClick","Episode3#Battle","Scenario#OnEnable","Scenario#OnDisable","Scenario#Start","Scenario#TurnEpisode2","Scenario#TurnEpisode3"]' ) ); }
 /**
- * @version 1.0.9246.30388
+ * @version 1.0.9246.31633
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -495,6 +495,48 @@ if ( TRACE ) { TRACE( "Episode2#MoveTo", this ); }
     });
     /*Episode2 end.*/
 
+    /*Episode3 start.*/
+    Bridge.define("Episode3", {
+        inherits: [UnityEngine.MonoBehaviour,UnityEngine.EventSystems.IPointerClickHandler],
+        fields: {
+            _battle: null,
+            _button: null,
+            _particleSystem1: null,
+            _particleSystem2: null,
+            _particleSystem3: null
+        },
+        alias: ["OnPointerClick", "UnityEngine$EventSystems$IPointerClickHandler$OnPointerClick"],
+        methods: {
+            /*Episode3.OnEnable start.*/
+            OnEnable: function () {
+if ( TRACE ) { TRACE( "Episode3#OnEnable", this ); }
+
+                this._button.SetActive(true);
+            },
+            /*Episode3.OnEnable end.*/
+
+            /*Episode3.OnPointerClick start.*/
+            OnPointerClick: function (eventData) {
+if ( TRACE ) { TRACE( "Episode3#OnPointerClick", this ); }
+
+                this.Battle();
+                this._button.SetActive(false);
+            },
+            /*Episode3.OnPointerClick end.*/
+
+            /*Episode3.Battle start.*/
+            Battle: function () {
+if ( TRACE ) { TRACE( "Episode3#Battle", this ); }
+
+                this._battle.gameObject.SetActive(true);
+            },
+            /*Episode3.Battle end.*/
+
+
+        }
+    });
+    /*Episode3 end.*/
+
     /*IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty start.*/
     Bridge.define("IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty", {
         inherits: [UnityEngine.MonoBehaviour]
@@ -506,7 +548,8 @@ if ( TRACE ) { TRACE( "Episode2#MoveTo", this ); }
         inherits: [UnityEngine.MonoBehaviour],
         fields: {
             _episode1: null,
-            _episode2: null
+            _episode2: null,
+            _episode3: null
         },
         methods: {
             /*Scenario.OnEnable start.*/
@@ -514,6 +557,7 @@ if ( TRACE ) { TRACE( "Episode2#MoveTo", this ); }
 if ( TRACE ) { TRACE( "Scenario#OnEnable", this ); }
 
                 this._episode1.addEnd(Bridge.fn.cacheBind(this, this.TurnEpisode2));
+                this._episode2.addEnd(Bridge.fn.cacheBind(this, this.TurnEpisode3));
             },
             /*Scenario.OnEnable end.*/
 
@@ -522,6 +566,7 @@ if ( TRACE ) { TRACE( "Scenario#OnEnable", this ); }
 if ( TRACE ) { TRACE( "Scenario#OnDisable", this ); }
 
                 this._episode1.removeEnd(Bridge.fn.cacheBind(this, this.TurnEpisode2));
+                this._episode2.addEnd(Bridge.fn.cacheBind(this, this.TurnEpisode3));
             },
             /*Scenario.OnDisable end.*/
 
@@ -543,6 +588,15 @@ if ( TRACE ) { TRACE( "Scenario#TurnEpisode2", this ); }
             },
             /*Scenario.TurnEpisode2 end.*/
 
+            /*Scenario.TurnEpisode3 start.*/
+            TurnEpisode3: function () {
+if ( TRACE ) { TRACE( "Scenario#TurnEpisode3", this ); }
+
+                this._episode2.enabled = false;
+                this._episode3.enabled = true;
+            },
+            /*Scenario.TurnEpisode3 end.*/
+
 
         }
     });
@@ -560,8 +614,12 @@ if ( TRACE ) { TRACE( "Scenario#TurnEpisode2", this ); }
     $m("Episode2", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCard","t":8,"sn":"AnimateCard","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"target","pt":$n[1].Vector3,"ps":0},{"n":"duration","pt":$n[2].Single,"ps":1}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[1].Vector3,$n[2].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[2].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[3].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[2].Void,"p":[$n[3].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[1].Vector3,"ps":0},{"n":"duration","pt":$n[2].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[1].Vector3,$n[2].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_arm","t":4,"rt":$n[1].GameObject,"sn":"_arm"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[1].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[1].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_points","t":4,"rt":$n[1].RectTransform,"sn":"_points"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[4].Text,"sn":"_textCoins"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage","t":4,"rt":$n[4].Text,"sn":"_textDamage"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage2","t":4,"rt":$n[1].GameObject,"sn":"_textDamage2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth","t":4,"rt":$n[4].Text,"sn":"_textHealth"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth2","t":4,"rt":$n[1].GameObject,"sn":"_textHealth2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit1","t":4,"rt":$n[1].RectTransform,"sn":"_unit1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit2","t":4,"rt":$n[1].RectTransform,"sn":"_unit2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[2].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"originalLocalPosition","t":4,"rt":$n[1].Vector3,"sn":"originalLocalPosition"},{"a":1,"n":"originalScale","t":4,"rt":$n[1].Vector3,"sn":"originalScale"},{"a":1,"n":"rectTransform","t":4,"rt":$n[1].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[2].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[1].Vector3,"sn":"targetScale"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[2].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[2].Void,"p":[Function]}}]}; }, $n);
     /*Episode2 end.*/
 
+    /*Episode3 start.*/
+    $m("Episode3", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"Battle","t":8,"sn":"Battle","rt":$n[2].Void},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[2].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[3].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[2].Void,"p":[$n[3].PointerEventData]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[1].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[1].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[1].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[1].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[1].ParticleSystem,"sn":"_particleSystem3"}]}; }, $n);
+    /*Episode3 end.*/
+
     /*Scenario start.*/
-    $m("Scenario", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"OnDisable","t":8,"sn":"OnDisable","rt":$n[2].Void},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[2].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[2].Void},{"a":1,"n":"TurnEpisode2","t":8,"sn":"TurnEpisode2","rt":$n[2].Void},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_episode1","t":4,"rt":Episode1,"sn":"_episode1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_episode2","t":4,"rt":Episode2,"sn":"_episode2"}]}; }, $n);
+    $m("Scenario", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"OnDisable","t":8,"sn":"OnDisable","rt":$n[2].Void},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[2].Void},{"a":1,"n":"Start","t":8,"sn":"Start","rt":$n[2].Void},{"a":1,"n":"TurnEpisode2","t":8,"sn":"TurnEpisode2","rt":$n[2].Void},{"a":1,"n":"TurnEpisode3","t":8,"sn":"TurnEpisode3","rt":$n[2].Void},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_episode1","t":4,"rt":Episode1,"sn":"_episode1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_episode2","t":4,"rt":Episode2,"sn":"_episode2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_episode3","t":4,"rt":Episode3,"sn":"_episode3"}]}; }, $n);
     /*Scenario end.*/
 
     /*IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty start.*/
