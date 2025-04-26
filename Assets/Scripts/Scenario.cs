@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scenario : MonoBehaviour
 {
@@ -7,9 +8,23 @@ public class Scenario : MonoBehaviour
     [SerializeField] private Episode3 _episode3;
     [SerializeField] private Episode4 _episode4;
     [SerializeField] private Episode4_1 _episode4_1;
+    [SerializeField] private Episode4_2 _episode4_2;
     [SerializeField] private Episode5 _episode5;
     [SerializeField] private Episode6 _episode6;
     [SerializeField] private Episode7 _episode7;
+
+    [SerializeField] private Card _card1__1;
+    [SerializeField] private Card _card1__2;
+    [SerializeField] private Card _card1__3;
+
+    [SerializeField] private Text _coinsText;
+
+    private Card _takenÑard1;
+    private Card _takenÑard2;
+
+    private bool _taken = false;
+
+    private int _cardsTaken = 0;
 
     private void OnEnable()
     {
@@ -19,6 +34,10 @@ public class Scenario : MonoBehaviour
         _episode4.End += TurnEpisode5;
         _episode5.End += TurnEpisode6;
         _episode6.End += TurnEpisode7;
+
+        _card1__1.They += CheckingCombat;
+        _card1__2.They += CheckingCombat;
+        _card1__3.They += CheckingCombat;
     }
 
     private void OnDisable()
@@ -73,5 +92,37 @@ public class Scenario : MonoBehaviour
     {
         _episode6.enabled = false;
         _episode7.enabled = true;
+    }
+
+    private void CheckingCombat(Card card)
+    {
+        if (_taken == false)
+        {
+            _takenÑard1 = card;
+            _taken = true;
+        }
+        else
+        {
+            _takenÑard2 = card;
+        }
+
+        _cardsTaken++;
+
+        int currentCoins = int.Parse(_coinsText.text);
+        currentCoins -= 3;
+        _coinsText.text = currentCoins.ToString();
+
+        if (_cardsTaken >= 2)
+        {
+            _episode4_2.enabled = true;
+            _episode3.enabled = false;
+            _episode7.enabled = false;
+            _episode4_2.InitialiseCards(_takenÑard1, _takenÑard2);
+
+            _card1__1.enabled = false;
+            _card1__2.enabled = false;
+            _card1__3.enabled = false;
+            Debug.Log("Çàïóñêàş áîé 2 ñöåíàğèÿ");
+        }
     }
 }

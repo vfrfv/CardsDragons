@@ -1,45 +1,44 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class Episode7 : MonoBehaviour, IPointerClickHandler
+public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject _battle;
     [SerializeField] private GameObject _button;
 
     [SerializeField] private GameObject _cardEnemye1;
     [SerializeField] private GameObject _cardEnemye2;
-    [SerializeField] private GameObject _cardEnemye3;
-    [SerializeField] private GameObject _cardEnemye4;
-    [SerializeField] private GameObject _cardEnemye5;
-    [SerializeField] private GameObject _cardEnemye6;
+
+    [SerializeField] private GameObject _cardDracone1;
+    [SerializeField] private GameObject _cardDracone2;
+    [SerializeField] private GameObject _cardDracone3;
+
+    [SerializeField] private GameObject _winDefeat;
+    [SerializeField] private GameObject _winFinal;
 
     [SerializeField] private ParticleSystem _particleSystem1;
     [SerializeField] private ParticleSystem _particleSystem2;
     [SerializeField] private ParticleSystem _particleSystem3;
     [SerializeField] private ParticleSystem _particleSystem4;
     [SerializeField] private ParticleSystem _particleSystem5;
-    [SerializeField] private ParticleSystem _particleSystem6;
 
-    [SerializeField] private GameObject _winVictoty;
-    [SerializeField] private GameObject _winFinal;
-
+     private Card _cardDracone4;
+     private Card _cardDracone5;
 
     private CanvasGroup _victoryCanvasGroup;
 
     private void Awake()
     {
-        if (_winVictoty != null)
+        if (_winDefeat != null)
         {
-            _victoryCanvasGroup = _winVictoty.GetComponent<CanvasGroup>();
+            _victoryCanvasGroup = _winDefeat.GetComponent<CanvasGroup>();
             if (_victoryCanvasGroup == null)
             {
-                _victoryCanvasGroup = _winVictoty.AddComponent<CanvasGroup>();
+                _victoryCanvasGroup = _winDefeat.AddComponent<CanvasGroup>();
             }
             _victoryCanvasGroup.alpha = 0;
-            _winVictoty.SetActive(false);
+            _winDefeat.SetActive(false);
         }
     }
 
@@ -52,6 +51,12 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
     {
         Battle();
         _button.SetActive(false);
+    }
+
+    public void InitialiseCards(Card card1, Card card2)
+    {
+        _cardDracone4= card1;
+        _cardDracone5= card2;
     }
 
     private void Battle()
@@ -70,20 +75,23 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         _particleSystem3.Play();
         _particleSystem4.Play();
         _particleSystem5.Play();
-        _particleSystem6.Play();
+        _cardDracone4.PlayParticle();
+        _cardDracone5.PlayParticle();
+        // партиклы
 
         yield return new WaitForSeconds(0.2f);
 
         _cardEnemye1.gameObject.SetActive(false);
         _cardEnemye2.gameObject.SetActive(false);
-        _cardEnemye3.gameObject.SetActive(false);
-        _cardEnemye4.SetActive(false);
-        _cardEnemye5.SetActive(false);
-        _cardEnemye6.SetActive(false);
+        _cardDracone1.SetActive(false);
+        _cardDracone2.SetActive(false);
+        _cardDracone3.SetActive(false);
+        _cardDracone4.gameObject.SetActive(false);
+        _cardDracone5.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
-        _winVictoty.SetActive(true);
+        _winDefeat.SetActive(true);
         StartCoroutine(FadeInVictory());
 
         yield return new WaitForSeconds(2f);
@@ -96,7 +104,7 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         float elapsed = 0f;
 
         _victoryCanvasGroup.alpha = 0;
-        _winVictoty.transform.localScale = Vector3.zero;
+        _winDefeat.transform.localScale = Vector3.zero;
 
         while (elapsed < duration)
         {
@@ -104,12 +112,12 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
             float t = elapsed / duration;
 
             _victoryCanvasGroup.alpha = Mathf.Clamp01(t);
-            _winVictoty.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
+            _winDefeat.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
 
             yield return null;
         }
 
         _victoryCanvasGroup.alpha = 1;
-        _winVictoty.transform.localScale = Vector3.one;
+        _winDefeat.transform.localScale = Vector3.one;
     }
 }

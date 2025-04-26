@@ -8,6 +8,11 @@ public class Episode4_1 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _cart1__2;
     [SerializeField] private GameObject _cart2__2;
     [SerializeField] private GameObject _cart3__2;
+
+    [SerializeField] private GameObject _cart1_1;
+    [SerializeField] private GameObject _cart2_1;
+    [SerializeField] private GameObject _cart3_1;
+
     [SerializeField] private GameObject _arm;
     [SerializeField] private Text _coinText;
 
@@ -24,6 +29,11 @@ public class Episode4_1 : MonoBehaviour, IPointerClickHandler
         _cart1__2.SetActive(true);
         _cart2__2.SetActive(true);
         _cart3__2.SetActive(true);
+
+        _cart1_1.SetActive(false);
+        _cart2_1.SetActive(false);
+        _cart3_1.SetActive(false);
+
 
         _arm.SetActive(false);
 
