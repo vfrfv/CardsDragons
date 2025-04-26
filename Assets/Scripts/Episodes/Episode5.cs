@@ -16,6 +16,11 @@ public class Episode5 : MonoBehaviour, IPointerClickHandler
 
     public event Action End;
 
+    private void Start()
+    {
+        
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         _coinsText.text = "3";

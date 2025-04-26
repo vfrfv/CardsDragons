@@ -6,6 +6,7 @@ public class Scenario : MonoBehaviour
     [SerializeField] private Episode2 _episode2;
     [SerializeField] private Episode3 _episode3;
     [SerializeField] private Episode4 _episode4;
+    [SerializeField] private Episode4_1 _episode4_1;
     [SerializeField] private Episode5 _episode5;
     [SerializeField] private Episode6 _episode6;
     [SerializeField] private Episode7 _episode7;
@@ -14,7 +15,7 @@ public class Scenario : MonoBehaviour
     {
         _episode1.End += TurnEpisode2;
         _episode2.End += TurnEpisode3;
-        _episode3.End += TurnEpisode4;
+        _episode3.End += TurnEpisode4And4_1;
         _episode4.End += TurnEpisode5;
         _episode5.End += TurnEpisode6;
         _episode6.End += TurnEpisode7;
@@ -24,7 +25,7 @@ public class Scenario : MonoBehaviour
     {
         _episode1.End -= TurnEpisode2;
         _episode2.End -= TurnEpisode3;
-        _episode3.End -= TurnEpisode4;
+        _episode3.End -= TurnEpisode4And4_1;
         _episode4.End -= TurnEpisode5;
         _episode5.End -= TurnEpisode6;
         _episode6.End -= TurnEpisode7;
@@ -48,14 +49,16 @@ public class Scenario : MonoBehaviour
         _episode3.enabled = true;
     }
 
-    private void TurnEpisode4()
+    private void TurnEpisode4And4_1()
     {
         _episode3.enabled = false;
         _episode4.gameObject.SetActive(true);
+        _episode4_1.enabled = true;
     }
 
     private void TurnEpisode5()
     {
+        _episode4_1.enabled = false;
         _episode4.enabled = false;
         _episode5.enabled = true;
     }
