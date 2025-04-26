@@ -5708,6 +5708,7 @@ MonoBehaviour:
   _episode5: {fileID: 1884072065}
   episode4_1: {fileID: 1884072066}
   episode5_2: {fileID: 1149124798}
+  _texCoins: {fileID: 244213405}
 --- !u!1 &1095274540
 GameObject:
   m_ObjectHideFlags: 0

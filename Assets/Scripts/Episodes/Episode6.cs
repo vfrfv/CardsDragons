@@ -71,10 +71,10 @@ public class Episode6 : MonoBehaviour, IPointerClickHandler
         _cart.SetActive(false);
         _cartPoint.SetActive(false);
 
-        // Увеличиваем Episode6
+        //Увеличиваем Episode6
         yield return StartCoroutine(ScaleTo(targetScale * 2f, scaleDuration));
 
-        // Возвращаем в оригинальный размер
+        //Возвращаем в оригинальный размер
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
 
         _textDamage.gameObject.SetActive(false);

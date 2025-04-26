@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,6 +14,13 @@ public class Episode5 : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] private Text _coinsText;
 
+    public event Action End;
+
+    private void Start()
+    {
+        
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         _coinsText.text = "3";
@@ -23,5 +31,7 @@ public class Episode5 : MonoBehaviour, IPointerClickHandler
         _card1_1_2.SetActive(true);
         _card1_2_2.SetActive(true);
         _card1_3_2.SetActive(true);
+
+        End?.Invoke();
     }
 }

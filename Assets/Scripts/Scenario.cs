@@ -20,8 +20,8 @@ public class Scenario : MonoBehaviour
 
     [SerializeField] private Text _coinsText;
 
-    private Card _takenÑard1;
-    private Card _takenÑard2;
+    private Card _takencard1;
+    private Card _takencard2;
 
     private bool _taken = false;
 
@@ -100,12 +100,12 @@ public class Scenario : MonoBehaviour
     {
         if (_taken == false)
         {
-            _takenÑard1 = card;
+            _takencard1 = card;
             _taken = true;
         }
         else
         {
-            _takenÑard2 = card;
+            _takencard2 = card;
         }
 
         _cardsTaken++;
@@ -119,7 +119,7 @@ public class Scenario : MonoBehaviour
             _episode4_2.enabled = true;
             _episode3.enabled = false;
             _episode7.enabled = false;
-            _episode4_2.InitialiseCards(_takenÑard1, _takenÑard2);
+            _episode4_2.InitialiseCards(_takencard1, _takencard2);
 
             _card1__1.enabled = false;
             _card1__2.enabled = false;

@@ -62,7 +62,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
 
     private IEnumerator DestroyingEnemies()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f);
 
         _particleSystem1.Play();
         _particleSystem2.Play();
