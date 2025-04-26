@@ -4,26 +4,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Episode3 : MonoBehaviour, IPointerClickHandler
+public class Episode7 : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject _battle;
     [SerializeField] private GameObject _button;
 
-    [SerializeField] private GameObject _cardDracone;
-    [SerializeField] private RectTransform _point;
-
     [SerializeField] private GameObject _cardEnemye1;
     [SerializeField] private GameObject _cardEnemye2;
     [SerializeField] private GameObject _cardEnemye3;
+    [SerializeField] private GameObject _cardEnemye4;
+    [SerializeField] private GameObject _cardEnemye5;
+    [SerializeField] private GameObject _cardEnemye6;
 
     [SerializeField] private ParticleSystem _particleSystem1;
     [SerializeField] private ParticleSystem _particleSystem2;
     [SerializeField] private ParticleSystem _particleSystem3;
+    [SerializeField] private ParticleSystem _particleSystem4;
+    [SerializeField] private ParticleSystem _particleSystem5;
+    [SerializeField] private ParticleSystem _particleSystem6;
 
-    [SerializeField] private Text _textCoins;
     [SerializeField] private GameObject _winVictoty;
+    [SerializeField] private GameObject _winFinal;
 
-    public event Action End;
 
     private CanvasGroup _victoryCanvasGroup;
 
@@ -54,7 +56,6 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
 
     private void Battle()
     {
-        _cardDracone.transform.position = _point.position;
         _battle.gameObject.SetActive(true);
 
         StartCoroutine(DestroyingEnemies());
@@ -67,24 +68,26 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
         _particleSystem1.Play();
         _particleSystem2.Play();
         _particleSystem3.Play();
+        _particleSystem4.Play();
+        _particleSystem5.Play();
+        _particleSystem6.Play();
 
         yield return new WaitForSeconds(0.2f);
 
         _cardEnemye1.gameObject.SetActive(false);
         _cardEnemye2.gameObject.SetActive(false);
         _cardEnemye3.gameObject.SetActive(false);
+        _cardEnemye4.SetActive(false);
+        _cardEnemye5.SetActive(false);
+        _cardEnemye6.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
         _winVictoty.SetActive(true);
         StartCoroutine(FadeInVictory());
-        _textCoins.text = "7";
 
         yield return new WaitForSeconds(2f);
-
-        _battle.gameObject.SetActive(false);
-        _winVictoty.gameObject.SetActive(false);
-        End?.Invoke();
+        _winFinal.gameObject.SetActive(true);
     }
 
     private IEnumerator FadeInVictory()

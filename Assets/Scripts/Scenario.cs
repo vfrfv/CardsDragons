@@ -8,6 +8,7 @@ public class Scenario : MonoBehaviour
     [SerializeField] private Episode4 _episode4;
     [SerializeField] private Episode5 _episode5;
     [SerializeField] private Episode6 _episode6;
+    [SerializeField] private Episode7 _episode7;
 
     private void OnEnable()
     {
@@ -16,6 +17,7 @@ public class Scenario : MonoBehaviour
         _episode3.End += TurnEpisode4;
         _episode4.End += TurnEpisode5;
         _episode5.End += TurnEpisode6;
+        _episode6.End += TurnEpisode7;
     }
 
     private void OnDisable()
@@ -25,6 +27,7 @@ public class Scenario : MonoBehaviour
         _episode3.End -= TurnEpisode4;
         _episode4.End -= TurnEpisode5;
         _episode5.End -= TurnEpisode6;
+        _episode6.End -= TurnEpisode7;
     }
 
     private void Start()
@@ -61,5 +64,11 @@ public class Scenario : MonoBehaviour
     {
         _episode5.enabled = false;
         _episode6.enabled = true;
+    }
+
+    private void TurnEpisode7()
+    {
+        _episode6.enabled = false;
+        _episode7.enabled = true;
     }
 }
