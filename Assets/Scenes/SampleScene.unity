@@ -741,9 +741,9 @@ MonoBehaviour:
   _textHealth: {fileID: 788318273}
   _textHealth2: {fileID: 1157389678}
   _textDamage2: {fileID: 417259343}
-  scaleDuration: 0.2
-  moveDuration: 0.2
-  targetScale: {x: 0.8, y: 0.8, z: 1}
+  scaleDuration: 0.1
+  moveDuration: 0.1
+  targetScale: {x: 1.2, y: 1.2, z: 1}
 --- !u!1 &112688059
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,9 +5940,9 @@ MonoBehaviour:
   _textHealth: {fileID: 699173562}
   _textHealth2: {fileID: 1197451339}
   _textDamage2: {fileID: 939554023}
-  scaleDuration: 0.2
-  moveDuration: 0.2
-  targetScale: {x: 0.8, y: 0.8, z: 1}
+  scaleDuration: 0.1
+  moveDuration: 0.1
+  targetScale: {x: 1.2, y: 1.2, z: 1}
 --- !u!1 &1067824279
 GameObject:
   m_ObjectHideFlags: 0

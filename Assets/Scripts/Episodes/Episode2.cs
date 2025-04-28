@@ -51,8 +51,18 @@ public class Episode2 : MonoBehaviour, IPointerClickHandler
         yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
 
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
+
+        yield return StartCoroutine(MoveTo(_unit1.localPosition, moveDuration));
+        _unit1.gameObject.SetActive(false);
         _particleSystem1.Play();
+
+        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
+
+        yield return StartCoroutine(MoveTo(_unit2.localPosition, moveDuration));
+        _unit2.gameObject.SetActive(false);
         _particleSystem2.Play();
+
+        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
 
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);
@@ -60,8 +70,6 @@ public class Episode2 : MonoBehaviour, IPointerClickHandler
         _textDamage2.gameObject.SetActive(true);
         // Подождать для показа эффекта
         yield return new WaitForSecondsRealtime(0.2f);
-        _unit1.gameObject.SetActive(false);
-        _unit2.gameObject.SetActive(false);
 
         End?.Invoke();
     }
