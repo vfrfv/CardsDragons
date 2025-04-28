@@ -64,31 +64,54 @@ public class Episode6 : MonoBehaviour, IPointerClickHandler
 
         // Едем к _cartPoint
         Vector3 cartPointPosition = _cartPoint.transform.localPosition;
-        Coroutine moveEpisode = StartCoroutine(MoveTo(cartPointPosition, moveDuration));
-        Coroutine moveCart = StartCoroutine(MoveObjectTo(_cart, cartPointPosition, moveDuration));
+        Coroutine moveEpisode = StartCoroutine(MoveTo(cartPointPosition, 0.3f));
+        Coroutine moveCart = StartCoroutine(MoveObjectTo(_cart, cartPointPosition, 0.3f));
 
         // Ждем обе анимации
         //yield return moveEpisode;
         //yield return moveCart;
-        _particleCards.Play();
         yield return new WaitForSecondsRealtime(0.7f);
+        _particleCards.Play();
 
         // Скрываем _cart и _cartPoint
         _cart.SetActive(false);
         _cartPoint.SetActive(false);
-        _particleCards.Stop();
         //Увеличиваем Episode6
         yield return StartCoroutine(ScaleTo(targetScale * 2f, scaleDuration));
+        yield return StartCoroutine(ShakeEffect(1f));
+        _particleCards.Stop();
 
         //Возвращаем в оригинальный размер
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
-
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);
         _textHealth2.gameObject.SetActive(true);
         _textDamage2.gameObject.SetActive(true);
 
         End?.Invoke();
+    }
+
+    private IEnumerator ShakeEffect(float duration)
+    {
+        float elapsedTime = 0f;
+        Vector3 originalPosition = rectTransform.localPosition;
+        float shakeAmount = 10f; // Амплитуда тряски
+
+        while (elapsedTime < duration)
+        {
+            float xOffset = UnityEngine.Random.Range(-shakeAmount, shakeAmount);
+            float yOffset = UnityEngine.Random.Range(-shakeAmount, shakeAmount);
+
+            rectTransform.localPosition = new Vector3(originalPosition.x + xOffset, originalPosition.y + yOffset, originalPosition.z);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+       
+
+        // В конце тряски возвращаем объект в исходное положение
+        rectTransform.localPosition = originalPosition;
     }
 
     // Добавляем новый метод для перемещения объекта
