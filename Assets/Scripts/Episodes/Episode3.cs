@@ -58,9 +58,9 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
     private void Battle()
     {
         _cardDracone.transform.position = _point.position;
-        _battle.gameObject.SetActive(true);
+        StartCoroutine(SlideBattleUI());
 
-        StartCoroutine(DestroyingEnemies());
+        //StartCoroutine(DestroyingEnemies());
     }
 
     private IEnumerator DestroyingEnemies()
@@ -111,5 +111,31 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
 
         _victoryCanvasGroup.alpha = 1;
         _winVictoty.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator SlideBattleUI()
+    {
+        RectTransform rectTransform = _battle.GetComponent<RectTransform>();
+
+        Vector2 originalPosition = rectTransform.anchoredPosition;
+        Vector2 startPosition = originalPosition + new Vector2(0, 1000f); // на 200 вверх
+
+        rectTransform.anchoredPosition = startPosition;
+        _battle.SetActive(true);
+
+        float duration = 0.1f; // длительность анимации
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            rectTransform.anchoredPosition = Vector2.Lerp(startPosition, originalPosition, t);
+            yield return null;
+        }
+
+        rectTransform.anchoredPosition = originalPosition;
+
+        StartCoroutine(DestroyingEnemies());
     }
 }
