@@ -6542,6 +6542,9 @@ MonoBehaviour:
   _cardEnemye4: {fileID: 492975937}
   _cardEnemye5: {fileID: 721160988}
   _cardEnemye6: {fileID: 980856641}
+  _cardDragon1: {fileID: 106709947}
+  _cardDragon2: {fileID: 1257993920}
+  _cardDragon3: {fileID: 491029352}
   _particleSystem1: {fileID: 668755326}
   _particleSystem2: {fileID: 476302695}
   _particleSystem3: {fileID: 1230077232}
@@ -6552,6 +6555,7 @@ MonoBehaviour:
   _winFinal: {fileID: 1520086781}
   _particleSystem: {fileID: 2039527313}
   _particleDragon: {fileID: 1723005578}
+  _episode3: {fileID: 1149124794}
 --- !u!114 &1149124797
 MonoBehaviour:
   m_ObjectHideFlags: 0

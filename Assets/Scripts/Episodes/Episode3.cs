@@ -103,11 +103,13 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
         yield return new WaitForSeconds(2f);
 
         _battle.SetActive(false);
+        _winInscription.SetActive(false);
+        _winInscription2.SetActive(false);
         _winVictoty.SetActive(false);
         End?.Invoke();
     }
 
-    private IEnumerator FadeInVictory()
+    public IEnumerator FadeInVictory()
     {
         float appearDuration = 0.1f; // скорость появления победы
         float scaleDuration = 0.2f; // скорость анимации масштаба надписей
