@@ -27,6 +27,8 @@ public class Episode5_2 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ParticleSystem _particleSystem6;
     [SerializeField] private ParticleSystem _particleSystem7;
 
+    [SerializeField] private ParticleSystem _particleSystem;   
+
     private Card _cardDracone5;
 
     private CanvasGroup _victoryCanvasGroup;
@@ -47,11 +49,13 @@ public class Episode5_2 : MonoBehaviour, IPointerClickHandler
 
     private void OnEnable()
     {
+        _particleSystem.Play();
         _button.SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        _particleSystem.Stop();
         Battle();
         _button.SetActive(false);
     }

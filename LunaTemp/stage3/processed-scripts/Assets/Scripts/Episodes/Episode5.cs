@@ -13,16 +13,18 @@ public class Episode5 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _card2_1;
 
     [SerializeField] private Text _coinsText;
+    [SerializeField] private ParticleSystem _particleSystem;
 
     public event Action End;
 
-    private void Start()
+    private void OnEnable()
     {
-        
+        //_particleSystem.Play();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        _particleSystem.Stop();
         _coinsText.text = "3";
 
         _card1_1.SetActive(false);

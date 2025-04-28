@@ -126,6 +126,8 @@
             ],
             "includes": [
                 "Assets/Effects/",
+                "Assets/Effects/AuraSoftBlue.prefab",
+                "Assets/Effects/CFXR3 Hit Ice B (Air) 1.prefab",
                 "Assets/Effects/CFXR3 Hit Ice B (Air).prefab",
                 "Assets/Resources/DOTweenSettings.asset"
             ]
@@ -138,7 +140,7 @@
         "packages": {
             "default": {
                 "applicationName": "",
-                "orientation": "unspecified",
+                "orientation": "portrait",
                 "languages": [
                     "en"
                 ]
@@ -4550,7 +4552,7 @@
             },
             {
                 "name": "UnityEngine.ParticleSystemStopBehavior",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.ParticleSystemSubEmitterProperties",
@@ -20776,7 +20778,7 @@
                     },
                     {
                         "name": "Stop",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Stop$1",
@@ -23827,11 +23829,11 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "Start",
+                        "name": "OnPointerClick",
                         "excluded": false
                     },
                     {
-                        "name": "OnPointerClick",
+                        "name": "OnEnable",
                         "excluded": false
                     }
                 ]
@@ -23932,23 +23934,23 @@
                     },
                     {
                         "name": "OnEnable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnPointerClick",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Battle",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DestroyingEnemies",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FadeInVictory",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },

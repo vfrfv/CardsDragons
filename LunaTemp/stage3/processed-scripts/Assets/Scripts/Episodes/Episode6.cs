@@ -22,6 +22,9 @@ public class Episode6 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private float moveDuration = 0.5f;
     [SerializeField] private Vector3 targetScale = new Vector3(0.8f, 0.8f, 1f);
 
+    [SerializeField] private ParticleSystem _particleDragon;
+    [SerializeField] private ParticleSystem _particleCards;
+
     private RectTransform rectTransform;
     private Vector3 originalScale;
     private Vector3 originalLocalPosition;
@@ -39,6 +42,7 @@ public class Episode6 : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        _particleDragon.Stop();
         _arm.SetActive(false);
         _coinsText.text = "0";
         StartCoroutine(AnimateCard());
@@ -64,18 +68,20 @@ public class Episode6 : MonoBehaviour, IPointerClickHandler
         Coroutine moveCart = StartCoroutine(MoveObjectTo(_cart, cartPointPosition, moveDuration));
 
         // ���� ��� ��������
-        yield return moveEpisode;
-        yield return moveCart;
+        //yield return moveEpisode;
+        //yield return moveCart;
+        _particleCards.Play();
+        yield return new WaitForSecondsRealtime(0.7f);
 
         // �������� _cart � _cartPoint
         _cart.SetActive(false);
         _cartPoint.SetActive(false);
+        _particleCards.Stop();
+        //����������� Episode6
+        yield return StartCoroutine(ScaleTo(targetScale * 2f, scaleDuration));
 
-        // ����������� Episode6
-        //yield return StartCoroutine(ScaleTo(targetScale * 2f, scaleDuration));
-
-        // ���������� � ������������ ������
-        //yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
+        //���������� � ������������ ������
+        yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
 
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);

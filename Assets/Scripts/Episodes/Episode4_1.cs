@@ -16,15 +16,21 @@ public class Episode4_1 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _arm;
     [SerializeField] private Text _coinText;
 
+    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _particleDragon;
+
     public event Action End2;
 
     private void OnEnable()
     {
-
+        _particleDragon.Play();
+        _particleSystem.Play();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        _particleSystem.Stop();
+
         _coinText.text = "6";
         _cart1__2.SetActive(true);
         _cart2__2.SetActive(true);

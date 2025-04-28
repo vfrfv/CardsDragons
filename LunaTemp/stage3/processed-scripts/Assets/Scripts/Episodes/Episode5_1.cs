@@ -11,6 +11,8 @@ public class Episode5_1 : MonoBehaviour
     [SerializeField] private Episode5_2 episode5_2;
     [SerializeField] private Text _texCoins;
 
+    [SerializeField] private ParticleSystem _particleSystem;
+
     private Card _tCard;
     private bool _isPlayed = false;
 
@@ -25,6 +27,7 @@ public class Episode5_1 : MonoBehaviour
 
     private void CheckCardSufficiency(Card card)
     {
+        _particleSystem.Stop();
         _tCard = card;
         _isPlayed = true;
         _texCoins.text = "0";

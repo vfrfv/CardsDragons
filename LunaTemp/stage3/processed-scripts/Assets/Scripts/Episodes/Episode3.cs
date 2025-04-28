@@ -19,6 +19,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ParticleSystem _particleSystem1;
     [SerializeField] private ParticleSystem _particleSystem2;
     [SerializeField] private ParticleSystem _particleSystem3;
+    [SerializeField] private ParticleSystem _particleButton;
 
     [SerializeField] private Text _textCoins;
     [SerializeField] private GameObject _winVictoty;
@@ -43,6 +44,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
 
     private void OnEnable()
     {
+        _particleButton.Play();
         _button.SetActive(true);
     }
 
@@ -50,6 +52,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
     {
         Battle();
         _button.SetActive(false);
+        _particleButton.Stop();
     }
 
     private void Battle()

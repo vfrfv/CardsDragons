@@ -26,6 +26,9 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _winVictoty;
     [SerializeField] private GameObject _winFinal;
 
+    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _particleDragon;
+
 
     private CanvasGroup _victoryCanvasGroup;
 
@@ -46,12 +49,15 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
     private void OnEnable()
     {
         _button.SetActive(true);
+        _particleSystem.Play();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Battle();
         _button.SetActive(false);
+        _particleSystem.Stop();
+        _particleDragon.Stop();
     }
 
     private void Battle()

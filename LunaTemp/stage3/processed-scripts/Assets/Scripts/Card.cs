@@ -12,6 +12,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Vector3 targetScale = new Vector3(0.8f, 0.8f, 1f);
 
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _particleDragon;
 
     private RectTransform rectTransform;
     private Vector3 originalScale;
@@ -29,6 +30,11 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(_particleDragon != null)
+        {
+            _particleDragon.Stop();
+        }
+
         StartCoroutine(AnimateCard());
     }
 
