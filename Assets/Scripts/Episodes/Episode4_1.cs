@@ -55,14 +55,16 @@ public class Episode4_1 : MonoBehaviour, IPointerClickHandler
         Coroutine showCart3_2 = StartCoroutine(ScaleUp(_cart3__2));
 
         // Wait for the old objects to finish hiding
-        yield return hideCart1_1;
-        yield return hideCart2_1;
-        yield return hideCart3_1;
+        //yield return hideCart1_1;
+        //yield return hideCart2_1;
+        //yield return hideCart3_1;
 
-        // Wait for the new objects to finish showing
-        yield return showCart1_2;
-        yield return showCart2_2;
-        yield return showCart3_2;
+        //// Wait for the new objects to finish showing
+        //yield return showCart1_2;
+        //yield return showCart2_2;
+        //yield return showCart3_2;
+
+        yield return new WaitForSeconds(0.7f);
 
         // Deactivate the old arm object
         _arm.SetActive(false);

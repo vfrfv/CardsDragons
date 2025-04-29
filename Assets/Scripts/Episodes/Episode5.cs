@@ -48,13 +48,14 @@ public class Episode5 : MonoBehaviour, IPointerClickHandler
         Coroutine showCardsCoroutine3 = StartCoroutine(ScaleUp(_card1_3_2));
 
         // ∆дем завершени€ всех анимаций
-        yield return hideCardsCoroutine1;
-        yield return hideCardsCoroutine2;
+        //yield return hideCardsCoroutine1;
+        //yield return hideCardsCoroutine2;
 
-        // ∆дем завершени€ анимаций по€влени€ новых карт
-        yield return showCardsCoroutine1;
-        yield return showCardsCoroutine2;
-        yield return showCardsCoroutine3;
+        //// ∆дем завершени€ анимаций по€влени€ новых карт
+        //yield return showCardsCoroutine1;
+        //yield return showCardsCoroutine2;
+        //yield return showCardsCoroutine3;
+        yield return new WaitForSeconds(0.7f);
 
         End?.Invoke();
     }

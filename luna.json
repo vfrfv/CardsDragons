@@ -1751,10 +1751,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.Random",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.RangeAttribute",
                 "excluded": true
             },
@@ -7805,6 +7801,18 @@
             {
                 "name": "UnityEngine.Rendering.Universal.ShadowResolution",
                 "excluded": false
+            },
+            {
+                "name": "Episode4_2.AttackState",
+                "excluded": true
+            },
+            {
+                "name": "Episode4_2.ReturnInfo",
+                "excluded": true
+            },
+            {
+                "name": "Episode5_2.ReturnInfo",
+                "excluded": false
             }
         ],
         "unusedMethods": [
@@ -11672,11 +11680,11 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "$ctor1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -11684,15 +11692,15 @@
                     },
                     {
                         "name": "Dispose",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "moveNext",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "MoveNextRare",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "System$Collections$IEnumerator$reset",
@@ -13606,7 +13614,7 @@
                     },
                     {
                         "name": "Sample",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "InternalSample",
@@ -13630,7 +13638,7 @@
                     },
                     {
                         "name": "NextDouble",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "NextBytes",
@@ -16212,7 +16220,7 @@
                     },
                     {
                         "name": "InverseTransformPoint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TransformPoint$1",
@@ -16268,7 +16276,7 @@
                     },
                     {
                         "name": "SetParent",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DetachChildren",
@@ -17342,7 +17350,7 @@
                 "instanceMethods": [
                     {
                         "name": "Element#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchorMax#get",
@@ -17386,11 +17394,11 @@
                     },
                     {
                         "name": "anchoredPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchoredPosition#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sizeDelta#get",
@@ -18338,7 +18346,7 @@
                     },
                     {
                         "name": "OnRectTransformDimensionsChange",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDidApplyAnimationProperties",
@@ -18346,7 +18354,7 @@
                     },
                     {
                         "name": "OnTransformParentChanged",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnEnable",
@@ -18428,7 +18436,7 @@
                     },
                     {
                         "name": "OnTransformParentChanged",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ParentMaskStateChanged",
@@ -19926,7 +19934,7 @@
                     },
                     {
                         "name": "mainTexture#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "mainTexture#set",
@@ -20090,7 +20098,7 @@
                     },
                     {
                         "name": "GetTexture$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetTexture",
@@ -22004,7 +22012,7 @@
                     },
                     {
                         "name": "IsRebuildingLayout",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsRebuildingGraphics",
@@ -23743,6 +23751,26 @@
                     {
                         "name": "FadeInVictory",
                         "excluded": false
+                    },
+                    {
+                        "name": "AnimatePopIn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SlideBattleUI",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateAttack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveTo",
+                        "excluded": false
                     }
                 ]
             },
@@ -23787,6 +23815,18 @@
                     {
                         "name": "OnPointerClick",
                         "excluded": false
+                    },
+                    {
+                        "name": "AnimateObjects",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ScaleAndHide",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ScaleUp",
+                        "excluded": true
                     }
                 ]
             },
@@ -23811,16 +23851,32 @@
                         "excluded": false
                     },
                     {
-                        "name": "Battle",
-                        "excluded": false
-                    },
-                    {
-                        "name": "DestroyingEnemies",
-                        "excluded": false
-                    },
-                    {
                         "name": "FadeInVictory",
                         "excluded": false
+                    },
+                    {
+                        "name": "BattleSequence",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AnimateAttack",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ReturnToOriginalPosition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": true
+                    },
+                    {
+                        "name": "MoveTo",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AnimatePopIn",
+                        "excluded": true
                     }
                 ]
             },
@@ -23834,6 +23890,18 @@
                     },
                     {
                         "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateCards",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleAndHide",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleUp",
                         "excluded": false
                     }
                 ]
@@ -23877,15 +23945,31 @@
                         "excluded": false
                     },
                     {
-                        "name": "Battle",
-                        "excluded": false
-                    },
-                    {
-                        "name": "DestroyingEnemies",
-                        "excluded": false
-                    },
-                    {
                         "name": "FadeInVictory",
+                        "excluded": false
+                    },
+                    {
+                        "name": "BattleSequence",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateAttack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ReturnToOriginalPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveTo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimatePopIn",
                         "excluded": false
                     }
                 ]
@@ -23921,6 +24005,10 @@
                     {
                         "name": "MoveTo",
                         "excluded": false
+                    },
+                    {
+                        "name": "ShakeEffect",
+                        "excluded": false
                     }
                 ]
             },
@@ -23945,11 +24033,19 @@
                         "excluded": false
                     },
                     {
-                        "name": "DestroyingEnemies",
+                        "name": "AnimateDragons",
                         "excluded": false
                     },
                     {
-                        "name": "FadeInVictory",
+                        "name": "AnimateAttack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveTo",
                         "excluded": false
                     }
                 ]
@@ -23987,6 +24083,84 @@
                     {
                         "name": "Reset",
                         "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "ArmAnimation",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateArm",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Episode5_2.AttackState",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.Random",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "value#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "onUnitSphere#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "insideUnitSphere#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "state#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "state#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "insideUnitCircle#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "rotation#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SpherePoint",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Range$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Range",
+                        "excluded": true
+                    },
+                    {
+                        "name": "InitState",
+                        "excluded": true
                     }
                 ]
             }

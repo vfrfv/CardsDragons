@@ -49,15 +49,22 @@ public class Episode1 : MonoBehaviour, IPointerClickHandler
         yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
 
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
+
+        yield return StartCoroutine(MoveTo(_unit.localPosition, moveDuration));
+
         _particleSystem.Play();
+        _unit.gameObject.SetActive(false);
+
+        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
+
+
 
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);
         _textHealth2.gameObject.SetActive(true);
         _textDamage2.gameObject.SetActive(true);
-        // ��������� ��� ������ �������
+
         yield return new WaitForSecondsRealtime(0.2f);
-        _unit.gameObject.SetActive(false);
 
         End?.Invoke();
     }
