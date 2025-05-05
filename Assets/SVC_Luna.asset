@@ -105,6 +105,70 @@ MonoBehaviour:
     upToDate: 0
     keywords: []
   - shaderCompilerPlatform: 5
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_ALPHACLIP
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_ALPHACLIP
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_CLIP_RECT
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_CLIP_RECT
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_ALPHACLIP
+    - UNITY_UI_CLIP_RECT
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - UNITY_UI_ALPHACLIP
+    - UNITY_UI_CLIP_RECT
+  - shaderCompilerPlatform: 5
     shader: {fileID: -6465566751694194690, guid: 1581eccce46ba384596a1dce7936ab19, type: 3}
     passType: 13
     passId: 0
@@ -278,70 +342,6 @@ MonoBehaviour:
     - _CFXR_DISSOLVE
     - _FADING_ON
     - _
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords: []
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords: []
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_ALPHACLIP
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_ALPHACLIP
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_CLIP_RECT
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_CLIP_RECT
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_ALPHACLIP
-    - UNITY_UI_CLIP_RECT
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-    passType: 0
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - UNITY_UI_ALPHACLIP
-    - UNITY_UI_CLIP_RECT
   _usedByLunaBuild:
   - shaderCompilerPlatform: 5
     shader: {fileID: -6465566751694194690, guid: 1a29b4d27eb8b04479ef89c00dea533d, type: 3}
@@ -425,7 +425,7 @@ MonoBehaviour:
     - _FADING_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 587
+  version: 732
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0

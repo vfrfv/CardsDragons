@@ -1,6 +1,6 @@
 if ( TRACE ) { TRACE( JSON.parse( '["ArmAnimation#init","ArmAnimation#Start","ArmAnimation#AnimateArm","Card#init","Card#OnEnable","Card#OnPointerClick","Card#PlayParticle","Card#AnimateCard","Card#ScaleTo","Card#MoveTo","Episode1#init","Episode1#OnEnable","Episode1#OnPointerClick","Episode1#AnimateCard","Episode1#ScaleTo","Episode1#MoveTo","Episode2#init","Episode2#OnEnable","Episode2#OnPointerClick","Episode2#AnimateCard","Episode2#ScaleTo","Episode2#MoveTo","Episode3#Awake","Episode3#OnEnable","Episode3#OnPointerClick","Episode3#Battle","Episode3#DestroyingEnemies","Episode3#FadeInVictory","Episode3#AnimatePopIn","Episode3#SlideBattleUI","Episode3#AnimateAttack","Episode3#ScaleTo","Episode3#MoveTo","Episode4#init","Episode4#OnEnable","Episode4#OnPointerClick","Episode4#AnimateCard","Episode4#ScaleTo","Episode4#MoveTo","Episode4_1#OnEnable","Episode4_1#OnPointerClick","Episode4_1#AnimateObjects","Episode4_1#ScaleAndHide","Episode4_1#ScaleUp","Episode4_2#Awake","Episode4_2#OnEnable","Episode4_2#OnPointerClick","Episode4_2#InitialiseCards","Episode4_2#BattleSequence","Episode4_2#AnimateAttack","Episode4_2#ReturnToOriginalPosition","Episode4_2#ScaleTo","Episode4_2#MoveTo","Episode4_2#FadeInVictory","Episode4_2#AnimatePopIn","Episode4_2.AttackState#init","Episode5#OnEnable","Episode5#OnPointerClick","Episode5#AnimateCards","Episode5#ScaleAndHide","Episode5#ScaleUp","Episode5_1#init","Episode5_1#OnEnable","Episode5_1#CheckCardSufficiency","Episode5_2#Awake","Episode5_2#OnEnable","Episode5_2#OnPointerClick","Episode5_2#InitialiseCards","Episode5_2#BattleSequence","Episode5_2#AnimateAttack","Episode5_2#ReturnToOriginalPosition","Episode5_2#ScaleTo","Episode5_2#MoveTo","Episode5_2#FadeInVictory","Episode5_2#AnimatePopIn","Episode5_2.AttackState#init","Episode6#init","Episode6#OnEnable","Episode6#OnPointerClick","Episode6#AnimateCard","Episode6#ShakeEffect","Episode6#MoveObjectTo","Episode6#ScaleTo","Episode6#MoveTo","Episode7#Awake","Episode7#OnEnable","Episode7#OnPointerClick","Episode7#Battle","Episode7#AnimateDragons","Episode7#AnimateAttack","Episode7#ScaleTo","Episode7#MoveTo","Scenario#init","Scenario#OnEnable","Scenario#OnDisable","Scenario#Start","Scenario#TurnEpisode2","Scenario#TurnEpisode3","Scenario#TurnEpisode4And4_1","Scenario#TurnEpisode5And5_1","Scenario#TurnEpisode6","Scenario#TurnEpisode7","Scenario#CheckingCombat"]' ) ); }
 /**
- * @version 1.0.9250.20935
+ * @version 1.0.9256.17337
  * @copyright anton
  * @compiler Bridge.NET 17.9.42-luna
  */
@@ -969,6 +969,7 @@ if ( TRACE ) { TRACE( "Episode2#MoveTo", this ); }
             _winVictoty: null,
             _winInscription: null,
             _winInscription2: null,
+            _winInscription3: null,
             _parentsDisplay: null,
             _victoryCanvasGroup: null
         },
@@ -1095,6 +1096,7 @@ if ( TRACE ) { TRACE( "Episode3#DestroyingEnemies", this ); }
                                     this._battle.SetActive(false);
                                         this._winInscription.SetActive(false);
                                         this._winInscription2.SetActive(false);
+                                        this._winInscription3.SetActive(false);
                                         this._winVictoty.SetActive(false);
                                         !Bridge.staticEquals(this.End, null) ? this.End() : null;
 
@@ -1175,7 +1177,7 @@ if ( TRACE ) { TRACE( "Episode3#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 5: {
-                                    // ����� ����� �������
+                                    // ����� ����� ���������
                                         $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
                                         $step = 6;
                                         return true;
@@ -1187,6 +1189,18 @@ if ( TRACE ) { TRACE( "Episode3#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 7: {
+                                    // ����� ����� ���������
+                                        $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
+                                        $step = 8;
+                                        return true;
+                                }
+                                case 8: {
+                                    // 4. �������� ������� �������
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimatePopIn(this._winInscription3, smallScale, overshootScale, scaleDuration, this._winInscription3.transform.localScale.$clone()));
+                                        $step = 9;
+                                        return true;
+                                }
+                                case 9: {
 
                                 }
                                 default: {
@@ -2097,7 +2111,8 @@ if ( TRACE ) { TRACE( "Episode4_1#ScaleUp", this ); }
             _cardDracone5: null,
             _victoryCanvasGroup: null,
             _winInscription: null,
-            _winInscription2: null
+            _winInscription2: null,
+            _winInscription3: null
         },
         alias: ["OnPointerClick", "UnityEngine$EventSystems$IPointerClickHandler$OnPointerClick"],
         methods: {
@@ -2164,14 +2179,14 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                             switch ($step) {
                                 case 0: {
                                     // === Enemye1 ������� ������, ����� ������������ ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone1, this._particleSystem4, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone1, this._particleSystem1, false));
                                         $step = 1;
                                         return true;
                                 }
                                 case 1: {
                                     this._cardDracone1.SetActive(false);
 
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone2, this._particleSystem3, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone2, this._particleSystem2, false));
                                         $step = 2;
                                         return true;
                                 }
@@ -2198,7 +2213,7 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                 }
                                 case 5: {
                                     // === Dracone3 ������� Enemye1 ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone3, this._cardEnemye1, this._particleSystem1));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone3, this._cardEnemye1, this._particleSystem3));
                                         $step = 6;
                                         return true;
                                 }
@@ -2206,19 +2221,20 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                     this._cardEnemye1.SetActive(false);
 
                                         // === Enemye2 ������� ������, ����� ������������ ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone3, this._particleSystem5, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone3, this._particleSystem4, false));
                                         $step = 7;
                                         return true;
                                 }
                                 case 7: {
                                     this._cardDracone3.SetActive(false);
 
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, this._particleSystem6, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, null, false));
                                         $step = 8;
                                         return true;
                                 }
                                 case 8: {
-                                    this._cardDracone4.gameObject.SetActive(false);
+                                    this._cardDracone4.PlayParticle();
+                                        this._cardDracone4.gameObject.SetActive(false);
 
                                         info2 = this._cardEnemye2.GetComponent(Episode4_2.ReturnInfo);
                                         if (UnityEngine.MonoBehaviour.op_Inequality(info2, null)) {
@@ -2240,7 +2256,7 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                 }
                                 case 11: {
                                     // === Dracone5 ������� Enemye2 ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone5.gameObject, this._cardEnemye2, this._particleSystem2));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone5.gameObject, this._cardEnemye2, this._particleSystem6));
                                         $step = 12;
                                         return true;
                                 }
@@ -2248,12 +2264,13 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                     this._cardEnemye2.SetActive(false);
 
                                         // === Enemye3 ������� Dracone5 (��������� �����) ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, this._particleSystem7));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, null));
                                         $step = 13;
                                         return true;
                                 }
                                 case 13: {
-                                    this._cardDracone5.gameObject.SetActive(false);
+                                    this._cardDracone5.PlayParticle();
+                                        this._cardDracone5.gameObject.SetActive(false);
 
                                         $enumerator.current = new UnityEngine.WaitForSeconds(1.0);
                                         $step = 14;
@@ -2324,7 +2341,10 @@ if ( TRACE ) { TRACE( "Episode4_2#AnimateAttack", this ); }
                                         return true;
                                 }
                                 case 2: {
-                                    effect.Play();
+                                    if (UnityEngine.Component.op_Inequality(effect, null)) {
+                                            effect.Play();
+
+                                        }
                                         $enumerator.current = new UnityEngine.WaitForSeconds(0.2);
                                         $step = 3;
                                         return true;
@@ -2591,7 +2611,7 @@ if ( TRACE ) { TRACE( "Episode4_2#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 5: {
-                                    // ����� ����� �������
+                                    // ����� ����� ���������
                                         $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
                                         $step = 6;
                                         return true;
@@ -2603,6 +2623,18 @@ if ( TRACE ) { TRACE( "Episode4_2#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 7: {
+                                    // ����� ����� ���������
+                                        $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
+                                        $step = 8;
+                                        return true;
+                                }
+                                case 8: {
+                                    // 4. �������� ������� �������
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimatePopIn(this._winInscription3, smallScale, overshootScale, scaleDuration, this._winInscription3.transform.localScale.$clone()));
+                                        $step = 9;
+                                        return true;
+                                }
+                                case 9: {
 
                                 }
                                 default: {
@@ -3082,6 +3114,7 @@ if ( TRACE ) { TRACE( "Episode5_1#CheckCardSufficiency", this ); }
             _layer: null,
             _winInscription: null,
             _winInscription2: null,
+            _winInscription3: null,
             _cardDracone5: null,
             _victoryCanvasGroup: null
         },
@@ -3146,14 +3179,14 @@ if ( TRACE ) { TRACE( "Episode5_2#BattleSequence", this ); }
                             switch ($step) {
                                 case 0: {
                                     // === Enemye1 ������� ������, ����� ������������ ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone1, this._particleSystem4, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone1, this._particleSystem1, false));
                                         $step = 1;
                                         return true;
                                 }
                                 case 1: {
                                     this._cardDracone1.SetActive(false);
 
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone2, this._particleSystem3, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye1, this._cardDracone2, this._particleSystem2, false));
                                         $step = 2;
                                         return true;
                                 }
@@ -3180,7 +3213,7 @@ if ( TRACE ) { TRACE( "Episode5_2#BattleSequence", this ); }
                                 }
                                 case 5: {
                                     // === Dracone3 ������� Enemye1 ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone3, this._cardEnemye1, this._particleSystem1));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone3, this._cardEnemye1, this._particleSystem3));
                                         $step = 6;
                                         return true;
                                 }
@@ -3188,14 +3221,14 @@ if ( TRACE ) { TRACE( "Episode5_2#BattleSequence", this ); }
                                     this._cardEnemye1.SetActive(false);
 
                                         // === Enemye2 ������� ������, ����� ������������ ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone3, this._particleSystem5, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone3, this._particleSystem4, false));
                                         $step = 7;
                                         return true;
                                 }
                                 case 7: {
                                     this._cardDracone3.SetActive(false);
 
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, this._particleSystem6, false));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, this._particleSystem5, false));
                                         $step = 8;
                                         return true;
                                 }
@@ -3222,7 +3255,7 @@ if ( TRACE ) { TRACE( "Episode5_2#BattleSequence", this ); }
                                 }
                                 case 11: {
                                     // === Dracone5 ������� Enemye2 ===
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone5.gameObject, this._cardEnemye2, this._particleSystem2));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDracone5.gameObject, this._cardEnemye2, this._particleSystem6));
                                         $step = 12;
                                         return true;
                                 }
@@ -3573,7 +3606,7 @@ if ( TRACE ) { TRACE( "Episode5_2#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 5: {
-                                    // ����� ����� �������
+                                    // ����� ����� ���������
                                         $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
                                         $step = 6;
                                         return true;
@@ -3585,6 +3618,18 @@ if ( TRACE ) { TRACE( "Episode5_2#FadeInVictory", this ); }
                                         return true;
                                 }
                                 case 7: {
+                                    // ����� ����� ���������
+                                        $enumerator.current = new UnityEngine.WaitForSeconds(0.1);
+                                        $step = 8;
+                                        return true;
+                                }
+                                case 8: {
+                                    // 4. �������� ������� �������
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimatePopIn(this._winInscription3, smallScale, overshootScale, scaleDuration, this._winInscription3.transform.localScale.$clone()));
+                                        $step = 9;
+                                        return true;
+                                }
+                                case 9: {
 
                                 }
                                 default: {
@@ -4262,7 +4307,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                         enemy2Pos = this._cardEnemye2.GetComponent(UnityEngine.RectTransform).position.$clone();
 
                                         // �������� ����� �� ������� �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon1, this._cardEnemye1, enemy1Pos, this._particleSystem6));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon1, this._cardEnemye1, enemy1Pos, this._particleSystem1));
                                         $step = 1;
                                         return true;
                                 }
@@ -4270,7 +4315,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                     this._cardEnemye1.SetActive(false); // ���������� ������� �����
 
                                         // �������� ����� �� ������� �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon1, this._cardEnemye2, enemy2Pos, this._particleSystem1));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon1, this._cardEnemye2, enemy2Pos, this._particleSystem2));
                                         $step = 2;
                                         return true;
                                 }
@@ -4288,7 +4333,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                         enemy4Pos = this._cardEnemye4.GetComponent(UnityEngine.RectTransform).position.$clone();
 
                                         // �������� ����� �� �������� �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon2, this._cardEnemye3, enemy3Pos, this._particleSystem5));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon2, this._cardEnemye3, enemy3Pos, this._particleSystem3));
                                         $step = 4;
                                         return true;
                                 }
@@ -4296,7 +4341,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                     this._cardEnemye3.SetActive(false); // ���������� �������� �����
 
                                         // �������� ����� �� ���������� �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon2, this._cardEnemye4, enemy4Pos, this._particleSystem2));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon2, this._cardEnemye4, enemy4Pos, this._particleSystem4));
                                         $step = 5;
                                         return true;
                                 }
@@ -4314,7 +4359,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                         enemy6Pos = this._cardEnemye6.GetComponent(UnityEngine.RectTransform).position.$clone();
 
                                         // �������� ����� �� ������ �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon3, this._cardEnemye5, enemy5Pos, this._particleSystem3));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon3, this._cardEnemye5, enemy5Pos, this._particleSystem5));
                                         $step = 7;
                                         return true;
                                 }
@@ -4322,7 +4367,7 @@ if ( TRACE ) { TRACE( "Episode7#AnimateDragons", this ); }
                                     this._cardEnemye5.SetActive(false); // ���������� ������ �����
 
                                         // �������� ����� �� ������� �����
-                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon3, this._cardEnemye6, enemy6Pos, this._particleSystem4));
+                                        $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardDragon3, this._cardEnemye6, enemy6Pos, this._particleSystem6));
                                         $step = 8;
                                         return true;
                                 }
@@ -4755,7 +4800,7 @@ if ( TRACE ) { TRACE( "Scenario#CheckingCombat", this ); }
     /*Episode2 end.*/
 
     /*Episode3 start.*/
-    $m("Episode3", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"dragon","pt":$n[2].GameObject,"ps":0},{"n":"enemy","pt":$n[2].GameObject,"ps":1}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"Battle","t":8,"sn":"Battle","rt":$n[1].Void},{"a":1,"n":"DestroyingEnemies","t":8,"sn":"DestroyingEnemies","rt":$n[0].IEnumerator},{"a":2,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"SlideBattleUI","t":8,"sn":"SlideBattleUI","rt":$n[0].IEnumerator},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon1","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon2","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon3","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_parentsDisplay","t":4,"rt":$n[2].GameObject,"sn":"_parentsDisplay"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleButton","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleButton"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_point","t":4,"rt":$n[2].RectTransform,"sn":"_point"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winVictoty","t":4,"rt":$n[2].GameObject,"sn":"_winVictoty"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
+    $m("Episode3", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"dragon","pt":$n[2].GameObject,"ps":0},{"n":"enemy","pt":$n[2].GameObject,"ps":1}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"Battle","t":8,"sn":"Battle","rt":$n[1].Void},{"a":1,"n":"DestroyingEnemies","t":8,"sn":"DestroyingEnemies","rt":$n[0].IEnumerator},{"a":2,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"SlideBattleUI","t":8,"sn":"SlideBattleUI","rt":$n[0].IEnumerator},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon1","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon2","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDragon3","t":4,"rt":$n[2].GameObject,"sn":"_cardDragon3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_parentsDisplay","t":4,"rt":$n[2].GameObject,"sn":"_parentsDisplay"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleButton","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleButton"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_point","t":4,"rt":$n[2].RectTransform,"sn":"_point"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription3","t":4,"rt":$n[2].GameObject,"sn":"_winInscription3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winVictoty","t":4,"rt":$n[2].GameObject,"sn":"_winVictoty"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
     /*Episode3 end.*/
 
     /*Episode4_1 start.*/
@@ -4763,7 +4808,7 @@ if ( TRACE ) { TRACE( "Scenario#CheckingCombat", this ); }
     /*Episode4_1 end.*/
 
     /*Episode4_2 start.*/
-    $m("Episode4_2", function () { return {"nested":[Episode4_2.AttackState,Episode4_2.ReturnInfo],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"attacker","pt":$n[2].GameObject,"ps":0},{"n":"target","pt":$n[2].GameObject,"ps":1},{"n":"effect","pt":$n[2].ParticleSystem,"ps":2},{"n":"returnToOriginal","dv":true,"o":true,"pt":$n[1].Boolean,"ps":3}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject,$n[2].ParticleSystem,$n[1].Boolean]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"BattleSequence","t":8,"sn":"BattleSequence","rt":$n[0].IEnumerator},{"a":1,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":2,"n":"InitialiseCards","t":8,"pi":[{"n":"card1","pt":Card,"ps":0},{"n":"card2","pt":Card,"ps":1}],"sn":"InitialiseCards","rt":$n[1].Void,"p":[Card,Card]},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ReturnToOriginalPosition","t":8,"pi":[{"n":"attackerRect","pt":$n[2].RectTransform,"ps":0},{"n":"state","pt":Episode4_2.AttackState,"ps":1}],"sn":"ReturnToOriginalPosition","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,Episode4_2.AttackState]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone1","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone2","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone3","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone3"},{"a":1,"n":"_cardDracone4","t":4,"rt":Card,"sn":"_cardDracone4"},{"a":1,"n":"_cardDracone5","t":4,"rt":Card,"sn":"_cardDracone5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_layer","t":4,"rt":$n[2].GameObject,"sn":"_layer"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleButtun","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleButtun"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleDragon","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleDragon"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem4","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem4"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem5","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem6","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem6"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem7","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem7"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winDefeat","t":4,"rt":$n[2].GameObject,"sn":"_winDefeat"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winFinal","t":4,"rt":$n[2].GameObject,"sn":"_winFinal"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"}]}; }, $n);
+    $m("Episode4_2", function () { return {"nested":[Episode4_2.AttackState,Episode4_2.ReturnInfo],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"attacker","pt":$n[2].GameObject,"ps":0},{"n":"target","pt":$n[2].GameObject,"ps":1},{"n":"effect","pt":$n[2].ParticleSystem,"ps":2},{"n":"returnToOriginal","dv":true,"o":true,"pt":$n[1].Boolean,"ps":3}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject,$n[2].ParticleSystem,$n[1].Boolean]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"BattleSequence","t":8,"sn":"BattleSequence","rt":$n[0].IEnumerator},{"a":1,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":2,"n":"InitialiseCards","t":8,"pi":[{"n":"card1","pt":Card,"ps":0},{"n":"card2","pt":Card,"ps":1}],"sn":"InitialiseCards","rt":$n[1].Void,"p":[Card,Card]},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ReturnToOriginalPosition","t":8,"pi":[{"n":"attackerRect","pt":$n[2].RectTransform,"ps":0},{"n":"state","pt":Episode4_2.AttackState,"ps":1}],"sn":"ReturnToOriginalPosition","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,Episode4_2.AttackState]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone1","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone2","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone3","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone3"},{"a":1,"n":"_cardDracone4","t":4,"rt":Card,"sn":"_cardDracone4"},{"a":1,"n":"_cardDracone5","t":4,"rt":Card,"sn":"_cardDracone5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_layer","t":4,"rt":$n[2].GameObject,"sn":"_layer"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleButtun","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleButtun"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleDragon","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleDragon"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem4","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem4"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem5","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem6","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem6"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem7","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem7"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winDefeat","t":4,"rt":$n[2].GameObject,"sn":"_winDefeat"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winFinal","t":4,"rt":$n[2].GameObject,"sn":"_winFinal"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription3","t":4,"rt":$n[2].GameObject,"sn":"_winInscription3"}]}; }, $n);
     /*Episode4_2 end.*/
 
     /*Episode4_2+AttackState start.*/
@@ -4783,7 +4828,7 @@ if ( TRACE ) { TRACE( "Scenario#CheckingCombat", this ); }
     /*Episode5_1 end.*/
 
     /*Episode5_2 start.*/
-    $m("Episode5_2", function () { return {"nested":[Episode5_2.AttackState,Episode5_2.ReturnInfo],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"attacker","pt":$n[2].GameObject,"ps":0},{"n":"target","pt":$n[2].GameObject,"ps":1},{"n":"effect","pt":$n[2].ParticleSystem,"ps":2},{"n":"returnToOriginal","dv":true,"o":true,"pt":$n[1].Boolean,"ps":3}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject,$n[2].ParticleSystem,$n[1].Boolean]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"BattleSequence","t":8,"sn":"BattleSequence","rt":$n[0].IEnumerator},{"a":1,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":2,"n":"InitialiseCards","t":8,"pi":[{"n":"card2","pt":Card,"ps":0}],"sn":"InitialiseCards","rt":$n[1].Void,"p":[Card]},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ReturnToOriginalPosition","t":8,"pi":[{"n":"attackerRect","pt":$n[2].RectTransform,"ps":0},{"n":"state","pt":Episode5_2.AttackState,"ps":1}],"sn":"ReturnToOriginalPosition","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,Episode5_2.AttackState]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone1","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone2","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone3","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone4","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone4"},{"a":1,"n":"_cardDracone5","t":4,"rt":Card,"sn":"_cardDracone5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_layer","t":4,"rt":$n[2].GameObject,"sn":"_layer"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem4","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem4"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem5","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem6","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem6"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem7","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem7"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winDefeat","t":4,"rt":$n[2].GameObject,"sn":"_winDefeat"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winFinal","t":4,"rt":$n[2].GameObject,"sn":"_winFinal"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"}]}; }, $n);
+    $m("Episode5_2", function () { return {"nested":[Episode5_2.AttackState,Episode5_2.ReturnInfo],"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateAttack","t":8,"pi":[{"n":"attacker","pt":$n[2].GameObject,"ps":0},{"n":"target","pt":$n[2].GameObject,"ps":1},{"n":"effect","pt":$n[2].ParticleSystem,"ps":2},{"n":"returnToOriginal","dv":true,"o":true,"pt":$n[1].Boolean,"ps":3}],"sn":"AnimateAttack","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[2].GameObject,$n[2].ParticleSystem,$n[1].Boolean]},{"a":1,"n":"AnimatePopIn","t":8,"pi":[{"n":"target","pt":$n[2].GameObject,"ps":0},{"n":"startScale","pt":$n[1].Single,"ps":1},{"n":"overshootScale","pt":$n[1].Single,"ps":2},{"n":"duration","pt":$n[1].Single,"ps":3},{"n":"targetScale","dv":null,"o":true,"pt":$n[1].Nullable$1(UnityEngine.Vector3),"ps":4}],"sn":"AnimatePopIn","rt":$n[0].IEnumerator,"p":[$n[2].GameObject,$n[1].Single,$n[1].Single,$n[1].Single,$n[1].Nullable$1(UnityEngine.Vector3)]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":1,"n":"BattleSequence","t":8,"sn":"BattleSequence","rt":$n[0].IEnumerator},{"a":1,"n":"FadeInVictory","t":8,"sn":"FadeInVictory","rt":$n[0].IEnumerator},{"a":2,"n":"InitialiseCards","t":8,"pi":[{"n":"card2","pt":Card,"ps":0}],"sn":"InitialiseCards","rt":$n[1].Void,"p":[Card]},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ReturnToOriginalPosition","t":8,"pi":[{"n":"attackerRect","pt":$n[2].RectTransform,"ps":0},{"n":"state","pt":Episode5_2.AttackState,"ps":1}],"sn":"ReturnToOriginalPosition","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,Episode5_2.AttackState]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"rectTransform","pt":$n[2].RectTransform,"ps":0},{"n":"target","pt":$n[2].Vector3,"ps":1},{"n":"duration","pt":$n[1].Single,"ps":2}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].RectTransform,$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_battle","t":4,"rt":$n[2].GameObject,"sn":"_battle"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_button","t":4,"rt":$n[2].GameObject,"sn":"_button"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone1","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone2","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone3","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardDracone4","t":4,"rt":$n[2].GameObject,"sn":"_cardDracone4"},{"a":1,"n":"_cardDracone5","t":4,"rt":Card,"sn":"_cardDracone5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye1","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye2","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_cardEnemye3","t":4,"rt":$n[2].GameObject,"sn":"_cardEnemye3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_layer","t":4,"rt":$n[2].GameObject,"sn":"_layer"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem3","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem3"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem4","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem4"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem5","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem5"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem6","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem6"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem7","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem7"},{"a":1,"n":"_victoryCanvasGroup","t":4,"rt":$n[2].CanvasGroup,"sn":"_victoryCanvasGroup"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winDefeat","t":4,"rt":$n[2].GameObject,"sn":"_winDefeat"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winFinal","t":4,"rt":$n[2].GameObject,"sn":"_winFinal"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription","t":4,"rt":$n[2].GameObject,"sn":"_winInscription"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription2","t":4,"rt":$n[2].GameObject,"sn":"_winInscription2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_winInscription3","t":4,"rt":$n[2].GameObject,"sn":"_winInscription3"}]}; }, $n);
     /*Episode5_2 end.*/
 
     /*Episode5_2+AttackState start.*/

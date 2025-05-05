@@ -129,6 +129,7 @@
                 "Assets/Effects/AuraSoftBlue.prefab",
                 "Assets/Effects/CFXR3 Hit Ice B (Air) 1.prefab",
                 "Assets/Effects/CFXR3 Hit Ice B (Air).prefab",
+                "Assets/Effects/EnergyExplosionBlue.prefab",
                 "Assets/Resources/DOTweenSettings.asset"
             ]
         },
@@ -18214,7 +18215,7 @@
                     },
                     {
                         "name": "color#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -18350,7 +18351,7 @@
                     },
                     {
                         "name": "OnDidApplyAnimationProperties",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnTransformParentChanged",
@@ -18650,7 +18651,7 @@
                     },
                     {
                         "name": "OnDidApplyAnimationProperties",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "CalculateLayoutInputHorizontal",

@@ -36,6 +36,7 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
     private CanvasGroup _victoryCanvasGroup;
     [SerializeField] private GameObject _winInscription;
     [SerializeField] private GameObject _winInscription2;
+    [SerializeField] private GameObject _winInscription3;
 
     private void Awake()
     {
@@ -74,10 +75,10 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
     private IEnumerator BattleSequence()
     {
         // === Enemye1 ������� ������, ����� ������������ ===
-        yield return StartCoroutine(AnimateAttack(_cardEnemye1, _cardDracone1, _particleSystem4, returnToOriginal: false));
+        yield return StartCoroutine(AnimateAttack(_cardEnemye1, _cardDracone1, _particleSystem1, returnToOriginal: false));
         _cardDracone1.SetActive(false);
 
-        yield return StartCoroutine(AnimateAttack(_cardEnemye1, _cardDracone2, _particleSystem3, returnToOriginal: false));
+        yield return StartCoroutine(AnimateAttack(_cardEnemye1, _cardDracone2, _particleSystem2, returnToOriginal: false));
         _cardDracone2.SetActive(false);
 
         var info1 = _cardEnemye1.GetComponent<ReturnInfo>();
@@ -88,14 +89,15 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         }
 
         // === Dracone3 ������� Enemye1 ===
-        yield return StartCoroutine(AnimateAttack(_cardDracone3, _cardEnemye1, _particleSystem1));
+        yield return StartCoroutine(AnimateAttack(_cardDracone3, _cardEnemye1, _particleSystem3));
         _cardEnemye1.SetActive(false);
 
         // === Enemye2 ������� ������, ����� ������������ ===
-        yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone3, _particleSystem5, returnToOriginal: false));
+        yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone3, _particleSystem4, returnToOriginal: false));
         _cardDracone3.SetActive(false);
 
-        yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem6, returnToOriginal: false));
+        yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, returnToOriginal: false));
+        _cardDracone4.PlayParticle();
         _cardDracone4.gameObject.SetActive(false);
 
         var info2 = _cardEnemye2.GetComponent<ReturnInfo>();
@@ -106,11 +108,12 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         }
 
         // === Dracone5 ������� Enemye2 ===
-        yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye2, _particleSystem2));
+        yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye2, _particleSystem6));
         _cardEnemye2.SetActive(false);
 
         // === Enemye3 ������� Dracone5 (��������� �����) ===
-        yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem7));
+        yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
+        _cardDracone5.PlayParticle();
         _cardDracone5.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
@@ -139,7 +142,11 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 
         yield return StartCoroutine(ScaleTo(attackerRect, new Vector3(1.2f, 1.2f, 1f), 0.1f));
         yield return StartCoroutine(MoveTo(attackerRect, targetPos, 0.2f));
-        effect.Play();
+        if (effect != null)
+        {
+            effect.Play();
+
+        }
         yield return new WaitForSeconds(0.2f);
         yield return StartCoroutine(ScaleTo(attackerRect, Vector3.one, 0.1f));
 
@@ -214,11 +221,17 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         // 2. �������� ������ �������
         yield return StartCoroutine(AnimatePopIn(_winInscription, smallScale, overshootScale, scaleDuration));
 
-        // ����� ����� �������
+        // ����� ����� ���������
         yield return new WaitForSeconds(0.1f);
 
         // 3. �������� ������ �������
         yield return StartCoroutine(AnimatePopIn(_winInscription2, smallScale, overshootScale, scaleDuration, _winInscription2.transform.localScale));
+
+        // ����� ����� ���������
+        yield return new WaitForSeconds(0.1f);
+
+        // 4. �������� ������� �������
+        yield return StartCoroutine(AnimatePopIn(_winInscription3, smallScale, overshootScale, scaleDuration, _winInscription3.transform.localScale));
     }
 
     private IEnumerator AnimatePopIn(GameObject target, float startScale, float overshootScale, float duration, Vector3? targetScale = null)

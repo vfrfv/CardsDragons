@@ -29,6 +29,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _winVictoty;
     [SerializeField] private GameObject _winInscription;
     [SerializeField] private GameObject _winInscription2;
+    [SerializeField] private GameObject _winInscription3;
 
     [SerializeField] private GameObject _parentsDisplay;
 
@@ -105,6 +106,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
         _battle.SetActive(false);
         _winInscription.SetActive(false);
         _winInscription2.SetActive(false);
+        _winInscription3.SetActive(false);
         _winVictoty.SetActive(false);
         End?.Invoke();
     }
@@ -133,11 +135,17 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
         // 2. �������� ������ �������
         yield return StartCoroutine(AnimatePopIn(_winInscription, smallScale, overshootScale, scaleDuration));
 
-        // ����� ����� �������
+        // ����� ����� ���������
         yield return new WaitForSeconds(0.1f);
 
         // 3. �������� ������ �������
         yield return StartCoroutine(AnimatePopIn(_winInscription2, smallScale, overshootScale, scaleDuration, _winInscription2.transform.localScale));
+
+        // ����� ����� ���������
+        yield return new WaitForSeconds(0.1f);
+
+        // 4. �������� ������� �������
+        yield return StartCoroutine(AnimatePopIn(_winInscription3, smallScale, overshootScale, scaleDuration, _winInscription3.transform.localScale));
     }
 
     private IEnumerator AnimatePopIn(GameObject target, float startScale, float overshootScale, float duration, Vector3? targetScale = null)

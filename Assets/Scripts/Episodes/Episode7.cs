@@ -81,11 +81,11 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         Vector3 enemy2Pos = _cardEnemye2.GetComponent<RectTransform>().position;
 
         // Анимация атаки на первого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon1, _cardEnemye1, enemy1Pos, _particleSystem6));
+        yield return StartCoroutine(AnimateAttack(_cardDragon1, _cardEnemye1, enemy1Pos, _particleSystem1));
         _cardEnemye1.SetActive(false); // Уничтожаем первого врага
 
         // Анимация атаки на второго врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon1, _cardEnemye2, enemy2Pos, _particleSystem1));
+        yield return StartCoroutine(AnimateAttack(_cardDragon1, _cardEnemye2, enemy2Pos, _particleSystem2));
         _cardEnemye2.SetActive(false); // Уничтожаем второго врага
 
         // После уничтожения двух врагов возвращаем дракона на исходную позицию
@@ -96,11 +96,11 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         Vector3 enemy4Pos = _cardEnemye4.GetComponent<RectTransform>().position;
 
         // Анимация атаки на третьего врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon2, _cardEnemye3, enemy3Pos, _particleSystem5));
+        yield return StartCoroutine(AnimateAttack(_cardDragon2, _cardEnemye3, enemy3Pos, _particleSystem3));
         _cardEnemye3.SetActive(false); // Уничтожаем третьего врага
 
         // Анимация атаки на четвертого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon2, _cardEnemye4, enemy4Pos, _particleSystem2));
+        yield return StartCoroutine(AnimateAttack(_cardDragon2, _cardEnemye4, enemy4Pos, _particleSystem4));
         _cardEnemye4.SetActive(false); // Уничтожаем четвертого врага
 
         // После уничтожения двух врагов возвращаем дракона на исходную позицию
@@ -111,11 +111,11 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         Vector3 enemy6Pos = _cardEnemye6.GetComponent<RectTransform>().position;
 
         // Анимация атаки на пятого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye5, enemy5Pos, _particleSystem3));
+        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye5, enemy5Pos, _particleSystem5));
         _cardEnemye5.SetActive(false); // Уничтожаем пятого врага
 
         // Анимация атаки на шестого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye6, enemy6Pos, _particleSystem4));
+        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye6, enemy6Pos, _particleSystem6));
         _cardEnemye6.SetActive(false); // Уничтожаем шестого врага
 
         // После уничтожения двух врагов возвращаем дракона на исходную позицию

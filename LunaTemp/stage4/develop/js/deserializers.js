@@ -1084,7 +1084,8 @@ Deserializers["Episode3"] = function (request, data, root) {
   request.r(i681[30], i681[31], 0, i680, '_winVictoty')
   request.r(i681[32], i681[33], 0, i680, '_winInscription')
   request.r(i681[34], i681[35], 0, i680, '_winInscription2')
-  request.r(i681[36], i681[37], 0, i680, '_parentsDisplay')
+  request.r(i681[36], i681[37], 0, i680, '_winInscription3')
+  request.r(i681[38], i681[39], 0, i680, '_parentsDisplay')
   return i680
 }
 
@@ -1141,6 +1142,7 @@ Deserializers["Episode4_2"] = function (request, data, root) {
   request.r(i685[38], i685[39], 0, i684, '_layer')
   request.r(i685[40], i685[41], 0, i684, '_winInscription')
   request.r(i685[42], i685[43], 0, i684, '_winInscription2')
+  request.r(i685[44], i685[45], 0, i684, '_winInscription3')
   return i684
 }
 
@@ -1169,6 +1171,7 @@ Deserializers["Episode5_2"] = function (request, data, root) {
   request.r(i687[38], i687[39], 0, i686, '_layer')
   request.r(i687[40], i687[41], 0, i686, '_winInscription')
   request.r(i687[42], i687[43], 0, i686, '_winInscription2')
+  request.r(i687[44], i687[45], 0, i686, '_winInscription3')
   return i686
 }
 
@@ -2145,7 +2148,7 @@ Deserializers.productName = "CardsDragons";
 
 Deserializers.lunaInitializationTime = "04/25/2025 11:02:07";
 
-Deserializers.lunaDaysRunning = "3.9";
+Deserializers.lunaDaysRunning = "4.0";
 
 Deserializers.lunaVersion = "6.2.1";
 
@@ -2153,7 +2156,7 @@ Deserializers.lunaSHA = "28f227c1b455c28500de29df936f0d1376ee9c43";
 
 Deserializers.creativeName = "Arcein-Rush";
 
-Deserializers.lunaAppID = "27856";
+Deserializers.lunaAppID = "0";
 
 Deserializers.projectId = "44c3daab4de35354e9e92df1696c57a0";
 
@@ -2201,7 +2204,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "f4f02069-9b33-4014-9fbc-736d150bbae9";
+Deserializers.buildID = "4c70e6fc-a998-48fc-ab8e-f800e7008096";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Rendering","DebugUpdater","RuntimeInit"],["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[["Unity","VisualScripting","RuntimeVSUsageUtility","RuntimeInitializeOnLoadBeforeSceneLoad"]],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[["UnityEngine","Experimental","Rendering","XRSystem","XRSystemInit"]],[]];
 

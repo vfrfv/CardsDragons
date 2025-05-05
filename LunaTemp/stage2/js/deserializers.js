@@ -1084,7 +1084,8 @@ Deserializers["Episode3"] = function (request, data, root) {
   request.r(i681[30], i681[31], 0, i680, '_winVictoty')
   request.r(i681[32], i681[33], 0, i680, '_winInscription')
   request.r(i681[34], i681[35], 0, i680, '_winInscription2')
-  request.r(i681[36], i681[37], 0, i680, '_parentsDisplay')
+  request.r(i681[36], i681[37], 0, i680, '_winInscription3')
+  request.r(i681[38], i681[39], 0, i680, '_parentsDisplay')
   return i680
 }
 
@@ -1141,6 +1142,7 @@ Deserializers["Episode4_2"] = function (request, data, root) {
   request.r(i685[38], i685[39], 0, i684, '_layer')
   request.r(i685[40], i685[41], 0, i684, '_winInscription')
   request.r(i685[42], i685[43], 0, i684, '_winInscription2')
+  request.r(i685[44], i685[45], 0, i684, '_winInscription3')
   return i684
 }
 
@@ -1169,6 +1171,7 @@ Deserializers["Episode5_2"] = function (request, data, root) {
   request.r(i687[38], i687[39], 0, i686, '_layer')
   request.r(i687[40], i687[41], 0, i686, '_winInscription')
   request.r(i687[42], i687[43], 0, i686, '_winInscription2')
+  request.r(i687[44], i687[45], 0, i686, '_winInscription3')
   return i686
 }
 
@@ -2145,7 +2148,7 @@ Deserializers.productName = "CardsDragons";
 
 Deserializers.lunaInitializationTime = "04/25/2025 11:02:07";
 
-Deserializers.lunaDaysRunning = "3.9";
+Deserializers.lunaDaysRunning = "9.8";
 
 Deserializers.lunaVersion = "6.2.1";
 
@@ -2177,7 +2180,7 @@ Deserializers.isRuntimeAnalysisEnabledForCode = "True";
 
 Deserializers.runtimeAnalysisExcludedClassesCount = "1593";
 
-Deserializers.runtimeAnalysisExcludedMethodsCount = "3097";
+Deserializers.runtimeAnalysisExcludedMethodsCount = "3094";
 
 Deserializers.runtimeAnalysisExcludedModules = "physics3d, physics2d, reflection, prefabs";
 
@@ -2201,7 +2204,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "f4f02069-9b33-4014-9fbc-736d150bbae9";
+Deserializers.buildID = "705da28e-6215-4951-acf8-8e3cb73cfaae";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Rendering","DebugUpdater","RuntimeInit"],["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[["Unity","VisualScripting","RuntimeVSUsageUtility","RuntimeInitializeOnLoadBeforeSceneLoad"]],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[["UnityEngine","Experimental","Rendering","XRSystem","XRSystemInit"]],[]];
 
