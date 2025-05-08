@@ -30,10 +30,14 @@ public class Episode4v2 : MonoBehaviour
     [SerializeField] private GameObject _textHealth3;
     [SerializeField] private GameObject _textDamage3;
 
+    [SerializeField] private GameObject _layer;
+
     public Buttle _buttle;
 
     public List<Card2V> _dragonCards = new List<Card2V>();
     public List<Card2V> _nonDragonCards = new List<Card2V>();
+    public GameObject _armO;
+    public GameObject _armU;
 
     private int _mony = 7;
     public int _cardsDragon = 0;
@@ -44,6 +48,7 @@ public class Episode4v2 : MonoBehaviour
     private bool _mainCardArmUsed = false;
     public bool _isUpgrade = false;
     public bool _isButtle = false;
+    public bool _isArm = false;
 
     private void OnEnable()
     {
@@ -57,12 +62,23 @@ public class Episode4v2 : MonoBehaviour
         UpdateMoneyText();
     }
 
+    public void CreateArmUp()
+    {
+        if (_isArm == false)
+        {
+            _armU = Instantiate(_arm, _updateButton.transform);
+            //_armU.transform.SetParent(_layer.transform, false);
+            _isArm = true;
+        }
+    }
+
     private void UpdateMoneyText()
     {
         _TMony.text = _mony.ToString();
 
         if (_mony <= 1)
         {
+            _armU.gameObject.SetActive(false);
             _buttleButton.SetActive(true);
             _buttle.enabled = true;
         }
@@ -107,6 +123,8 @@ public class Episode4v2 : MonoBehaviour
 
     public void OnUpdateButtonClick()
     {
+        _armU.gameObject.SetActive(false);
+
         if (_mony < 1) return;
 
         _mony -= 1;
@@ -175,7 +193,10 @@ public class Episode4v2 : MonoBehaviour
             {
                 if (cardInstance._arm != null)
                 {
-                    cardInstance._arm.SetActive(true);
+                    _armO = Instantiate(_arm);
+                    _armO.transform.SetParent(cardInstance.transform, false);
+
+                    //cardInstance._arm.SetActive(true);
                     _mainCardArmUsed = true;
                 }
             }
@@ -183,7 +204,7 @@ public class Episode4v2 : MonoBehaviour
             {
                 if (cardInstance._arm != null)
                 {
-                    cardInstance._arm.SetActive(false);
+                    //cardInstance._arm.SetActive(false);
                 }
             }
         }

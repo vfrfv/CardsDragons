@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class Buttle : MonoBehaviour, IPointerClickHandler
 {
     public Episode4v2 _episode;
+    public GameObject _buttonShop;
 
     [SerializeField] private Episode7 _episode7;
     [SerializeField] private Episode4_2 _episode4_2;
@@ -16,6 +17,7 @@ public class Buttle : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         StartButtle();
+        _buttonShop.SetActive(false);
     }
 
     private void StartButtle()
