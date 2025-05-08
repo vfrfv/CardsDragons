@@ -33,9 +33,10 @@ public class Episode4v2 : MonoBehaviour
     public Buttle _buttle;
 
     public List<Card2V> _dragonCards = new List<Card2V>();
+    public List<Card2V> _nonDragonCards = new List<Card2V>();
 
     private int _mony = 7;
-     public int _cardsDragon = 0;
+    public int _cardsDragon = 0;
 
     private bool _cardChosen = false;      // Выбрали ли _card
     private bool _cardUsed = false;        // Был ли уже тройной спавн _card
@@ -73,12 +74,23 @@ public class Episode4v2 : MonoBehaviour
 
     public void IncrementDragonCard(Card2V card)
     {
-        _cardsDragon++;
-        _dragonCards.Add(card);
-
-        if (_dragonCards.Count == 2)
+        if (card._dragon)
         {
-            StartCoroutine(UpgradeCardsAnimation());
+            _cardsDragon++;
+            _dragonCards.Add(card);
+
+            if (_dragonCards.Count == 2)
+            {
+                StartCoroutine(UpgradeCardsAnimation());
+            }
+        }
+        else
+        {
+            // Добавляем карту в _nonDragonCards, если она не является драконьей
+            if (!_nonDragonCards.Contains(card))
+            {
+                _nonDragonCards.Add(card);
+            }
         }
     }
 

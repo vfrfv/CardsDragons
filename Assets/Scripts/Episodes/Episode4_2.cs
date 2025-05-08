@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -25,13 +26,15 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ParticleSystem _particleSystem5;
     [SerializeField] private ParticleSystem _particleSystem6;
     [SerializeField] private ParticleSystem _particleSystem7;
+    [SerializeField] private ParticleSystem _particleSystem8;
+    [SerializeField] private ParticleSystem _particleSystem9;
     [SerializeField] private ParticleSystem _particleButtun;
     [SerializeField] private ParticleSystem _particleDragon;
 
     [SerializeField] private GameObject _layer;
 
-    private Card _cardDracone4;
-    private Card _cardDracone5;
+    private Card2V _cardDracone4;
+    private Card2V _cardDracone5;
 
     private CanvasGroup _victoryCanvasGroup;
     [SerializeField] private GameObject _winInscription;
@@ -66,10 +69,30 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         StartCoroutine(BattleSequence());
     }
 
-    public void InitialiseCards(Card card1, Card card2)
+    public void InitialiseCards(List<Card2V> list1, List<Card2V> list2)
     {
-        _cardDracone4 = card1;
-        _cardDracone5 = card2;
+        // Объединяем два списка
+        List<Card2V> combinedCards = new List<Card2V>();
+        if (list1 != null) combinedCards.AddRange(list1);
+        if (list2 != null) combinedCards.AddRange(list2);
+
+        if (combinedCards.Count == 0)
+        {
+            _cardDracone4 = null;
+            _cardDracone5 = null;
+            return;
+        }
+
+        if (combinedCards.Count == 1)
+        {
+            _cardDracone4 = combinedCards[0];
+            _cardDracone5 = null;
+        }
+        else
+        {
+            _cardDracone4 = combinedCards[0];
+            _cardDracone5 = combinedCards[1];
+        }
     }
 
     private IEnumerator BattleSequence()
@@ -96,9 +119,23 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone3, _particleSystem4, returnToOriginal: false));
         _cardDracone3.SetActive(false);
 
-        yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, returnToOriginal: false));
-        _cardDracone4.PlayParticle();
-        _cardDracone4.gameObject.SetActive(false);
+        if (_cardDracone4 != null)
+        {
+            yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem5, returnToOriginal: false));
+            //_cardDracone4.PlayParticle();
+            _cardDracone4.gameObject.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            _winDefeat.SetActive(true);
+            StartCoroutine(FadeInVictory());
+
+            yield return new WaitForSeconds(2f);
+            _winFinal.gameObject.SetActive(true);
+            yield break;
+        }
 
         var info2 = _cardEnemye2.GetComponent<ReturnInfo>();
         if (info2 != null)
@@ -107,13 +144,28 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
             Destroy(info2);
         }
 
+        if (_cardDracone5 != null)
+        {
+            yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye2, _particleSystem8));
+            _cardEnemye2.SetActive(false);
+        }
+
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            _winDefeat.SetActive(true);
+            StartCoroutine(FadeInVictory());
+
+            yield return new WaitForSeconds(2f);
+            _winFinal.gameObject.SetActive(true);
+            yield break;
+        }
         // === Dracone5 атакует Enemye2 ===
-        yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye2, _particleSystem6));
-        _cardEnemye2.SetActive(false);
 
         // === Enemye3 атакует Dracone5 (одиночная атака) ===
-        yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
-        _cardDracone5.PlayParticle();
+        yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem9));
+        //_cardDracone5.PlayParticle();
         _cardDracone5.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);

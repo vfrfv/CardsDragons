@@ -4467,6 +4467,7 @@ MonoBehaviour:
   _textDamage3: {fileID: 1334012437}
   _buttle: {fileID: 1149124799}
   _dragonCards: []
+  _nonDragonCards: []
   _cardsDragon: 0
   _isUpgrade: 0
   _isButtle: 0
@@ -4703,11 +4704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d03a008ec9da3341b49fc3484037379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _battle: {fileID: 0}
+  _battle: {fileID: 2040468803}
   _button: {fileID: 1796358160}
-  _cardEnemye1: {fileID: 0}
-  _cardEnemye2: {fileID: 0}
-  _cardEnemye3: {fileID: 0}
+  _cardEnemye1: {fileID: 1967914132}
+  _cardEnemye2: {fileID: 492975937}
+  _cardEnemye3: {fileID: 980856641}
   _cardDracone1: {fileID: 1060818907}
   _cardDracone2: {fileID: 106709947}
   _cardDracone3: {fileID: 491029352}
@@ -4715,11 +4716,13 @@ MonoBehaviour:
   _winFinal: {fileID: 1520086781}
   _particleSystem1: {fileID: 2092150415}
   _particleSystem2: {fileID: 734172884}
-  _particleSystem3: {fileID: 1499805678}
+  _particleSystem3: {fileID: 1800251095}
   _particleSystem4: {fileID: 212035935}
   _particleSystem5: {fileID: 2095253860}
   _particleSystem6: {fileID: 1582561720}
   _particleSystem7: {fileID: 734172884}
+  _particleSystem8: {fileID: 318714352}
+  _particleSystem9: {fileID: 1127913210}
   _particleButtun: {fileID: 2039527313}
   _particleDragon: {fileID: 1723005578}
   _layer: {fileID: 1085413688}
@@ -4774,14 +4777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _episode: {fileID: 1077695949}
-  _buttle2: {fileID: 2040468803}
-  _cardEnemye1: {fileID: 0}
-  _cardEnemye2: {fileID: 0}
-  _cardEnemye3: {fileID: 0}
-  _cardEnemye4: {fileID: 0}
-  _cardEnemye5: {fileID: 0}
-  _cardEnemye6: {fileID: 0}
   _episode7: {fileID: 1149124796}
+  _episode4_2: {fileID: 1149124797}
 --- !u!1 &1157389678
 GameObject:
   m_ObjectHideFlags: 0
