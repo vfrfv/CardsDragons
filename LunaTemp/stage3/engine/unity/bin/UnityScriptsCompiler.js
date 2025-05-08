@@ -3216,7 +3216,7 @@ if ( TRACE ) { TRACE( "Episode4v2#SpawnCards", this ); }
                 for (var i = 0; i < spawnPoints.length; i = (i + 1) | 0) {
                     var cardInstance = UnityEngine.Object.Instantiate(Card2V, selectedCards.getItem(i), spawnPoints[i]);
                     cardInstance._episode = this;
-                    cardInstance._isMainCard = UnityEngine.MonoBehaviour.op_Equality(selectedCards.getItem(i), this._card);
+                    cardInstance._isMainCard = Bridge.referenceEquals(selectedCards.getItem(i).name, this._card.name);
                     cardInstance.transform.localPosition = pc.Vec3.ZERO.clone();
                     cardInstance.transform.localScale = new pc.Vec3( 1, 1, 1 );
                     if (!this._mainCardArmUsed) {

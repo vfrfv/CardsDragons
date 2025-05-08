@@ -24377,7 +24377,7 @@
                     },
                     {
                         "name": "NotifyCardChosen",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AnimateCardUpdate",
@@ -24393,19 +24393,19 @@
                     },
                     {
                         "name": "UpgradeCardsAnimation",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "MoveToWorldSpace",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ScaleTo",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ShakeEffect",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },

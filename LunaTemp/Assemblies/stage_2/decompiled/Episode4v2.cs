@@ -232,7 +232,7 @@ public class Episode4v2 : MonoBehaviour
 		{
 			Card2V cardInstance = Object.Instantiate(selectedCards[i], spawnPoints[i]);
 			cardInstance._episode = this;
-			cardInstance._isMainCard = selectedCards[i] == _card;
+			cardInstance._isMainCard = selectedCards[i].name == _card.name;
 			cardInstance.transform.localPosition = Vector3.zero;
 			cardInstance.transform.localScale = Vector3.one;
 			if (!_mainCardArmUsed)

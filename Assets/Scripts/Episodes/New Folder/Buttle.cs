@@ -9,6 +9,7 @@ public class Buttle : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] private Episode7 _episode7;
     [SerializeField] private Episode4_2 _episode4_2;
+    public GameObject _particle;
 
     private void OnEnable()
     {
@@ -19,6 +20,7 @@ public class Buttle : MonoBehaviour, IPointerClickHandler
     {
         StartButtle();
         _buttonShop.SetActive(false);
+        _particle.SetActive(false);
     }
 
     private void StartButtle()

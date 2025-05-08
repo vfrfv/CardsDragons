@@ -200,7 +200,7 @@ public class Episode4v2 : MonoBehaviour
 
             // Устанавливаем ссылку на Episode4v2 и флаг для _card
             cardInstance._episode = this;
-            cardInstance._isMainCard = (selectedCards[i] == _card);
+            cardInstance._isMainCard = selectedCards[i].name == _card.name;
 
             cardInstance.transform.localPosition = Vector3.zero;
             cardInstance.transform.localScale = Vector3.one;

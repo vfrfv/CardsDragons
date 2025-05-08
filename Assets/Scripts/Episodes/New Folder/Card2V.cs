@@ -25,13 +25,16 @@ public class Card2V : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(_dragon == true)
+        if (_dragon == true)
         {
             _episode.CreateArmUp();
         }
 
+        if (_episode._armO != null)
+        {
+            _episode._armO.gameObject.SetActive(false);
 
-        _episode._armO.gameObject.SetActive(false);
+        }
 
         if (_us && _episode != null)
         {
