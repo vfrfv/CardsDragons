@@ -30,6 +30,8 @@ public class Episode4v2 : MonoBehaviour
     [SerializeField] private GameObject _textHealth3;
     [SerializeField] private GameObject _textDamage3;
 
+    public Buttle _buttle;
+
     public List<Card2V> _dragonCards = new List<Card2V>();
 
     private int _mony = 7;
@@ -39,9 +41,12 @@ public class Episode4v2 : MonoBehaviour
     private bool _cardUsed = false;        // Был ли уже тройной спавн _card
     private bool _firstUpdateDone = false; // Был ли первый клик по кнопке обновления
     private bool _mainCardArmUsed = false;
+    public bool _isUpgrade = false;
+    public bool _isButtle = false;
 
     private void OnEnable()
     {
+        _isButtle = true;
         _cardChosen = false;
         _cardUsed = false;
         _firstUpdateDone = false;
@@ -51,11 +56,6 @@ public class Episode4v2 : MonoBehaviour
         UpdateMoneyText();
     }
 
-    private void Update()
-    {
-        Debug.Log("Карт драконов " + _dragonCards.Count);
-    }
-
     private void UpdateMoneyText()
     {
         _TMony.text = _mony.ToString();
@@ -63,6 +63,7 @@ public class Episode4v2 : MonoBehaviour
         if (_mony <= 1)
         {
             _buttleButton.SetActive(true);
+            _buttle.enabled = true;
         }
         else
         {
@@ -318,6 +319,8 @@ public class Episode4v2 : MonoBehaviour
 
     private IEnumerator UpgradeCardsAnimation()
     {
+        _isUpgrade = true;
+
         // Получаем карты и их RectTransform
         GameObject card1 = _dragonCards[0].gameObject;
         GameObject card2 = _dragonCards[1].gameObject;
@@ -380,7 +383,7 @@ public class Episode4v2 : MonoBehaviour
         _textDamage3.SetActive(true);
 
         // Очищаем список
-        _dragonCards.Clear();
+        //_dragonCards.Clear();
     }
 
     private IEnumerator MoveToWorldSpace(RectTransform rt, Vector3 target, float duration)

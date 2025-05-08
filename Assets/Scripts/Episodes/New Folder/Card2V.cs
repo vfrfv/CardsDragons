@@ -8,6 +8,7 @@ public class Card2V : MonoBehaviour, IPointerClickHandler
     public GameObject _arm;
     public Episode4v2 _episode;
     public bool _dragon = false;
+   
 
     public bool _isMainCard = false;
 

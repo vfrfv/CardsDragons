@@ -111,11 +111,11 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler
         Vector3 enemy6Pos = _cardEnemye6.GetComponent<RectTransform>().position;
 
         // Анимация атаки на пятого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye5, enemy5Pos, _particleSystem5));
+        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye5, enemy5Pos, _particleSystem6));
         _cardEnemye5.SetActive(false); // Уничтожаем пятого врага
 
         // Анимация атаки на шестого врага
-        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye6, enemy6Pos, _particleSystem6));
+        yield return StartCoroutine(AnimateAttack(_cardDragon3, _cardEnemye6, enemy6Pos, _particleSystem5));
         _cardEnemye6.SetActive(false); // Уничтожаем шестого врага
 
         // После уничтожения двух врагов возвращаем дракона на исходную позицию

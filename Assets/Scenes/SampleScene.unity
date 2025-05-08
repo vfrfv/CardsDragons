@@ -4465,8 +4465,11 @@ MonoBehaviour:
   _cardPointUpgrade: {fileID: 1060818907}
   _textHealth3: {fileID: 348947235}
   _textDamage3: {fileID: 1334012437}
+  _buttle: {fileID: 1149124799}
   _dragonCards: []
   _cardsDragon: 0
+  _isUpgrade: 0
+  _isButtle: 0
 --- !u!1 &1085413688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4593,6 +4596,7 @@ GameObject:
   - component: {fileID: 1149124796}
   - component: {fileID: 1149124797}
   - component: {fileID: 1149124798}
+  - component: {fileID: 1149124799}
   m_Layer: 5
   m_Name: ButtonBatle
   m_TagString: Untagged
@@ -4665,16 +4669,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8904f7aadaa4e8247800e9a90bc4dc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _battle: {fileID: 0}
+  _battle: {fileID: 2040468803}
   _button: {fileID: 1796358160}
-  _cardEnemye1: {fileID: 0}
-  _cardEnemye2: {fileID: 0}
-  _cardEnemye3: {fileID: 0}
-  _cardEnemye4: {fileID: 0}
-  _cardEnemye5: {fileID: 0}
-  _cardEnemye6: {fileID: 0}
-  _cardDragon1: {fileID: 106709947}
-  _cardDragon2: {fileID: 1257993920}
+  _cardEnemye1: {fileID: 1967914132}
+  _cardEnemye2: {fileID: 1067824279}
+  _cardEnemye3: {fileID: 816191845}
+  _cardEnemye4: {fileID: 492975937}
+  _cardEnemye5: {fileID: 980856641}
+  _cardEnemye6: {fileID: 721160988}
+  _cardDragon1: {fileID: 1060818907}
+  _cardDragon2: {fileID: 106709947}
   _cardDragon3: {fileID: 491029352}
   _particleSystem1: {fileID: 1800251095}
   _particleSystem2: {fileID: 1499805678}
@@ -4757,6 +4761,27 @@ MonoBehaviour:
   _winInscription: {fileID: 1268777921}
   _winInscription2: {fileID: 1644599012}
   _winInscription3: {fileID: 2039210691}
+--- !u!114 &1149124799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149124793}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b2d0d8dbf7eae4d9d06c86cff4dce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _episode: {fileID: 1077695949}
+  _buttle2: {fileID: 2040468803}
+  _cardEnemye1: {fileID: 0}
+  _cardEnemye2: {fileID: 0}
+  _cardEnemye3: {fileID: 0}
+  _cardEnemye4: {fileID: 0}
+  _cardEnemye5: {fileID: 0}
+  _cardEnemye6: {fileID: 0}
+  _episode7: {fileID: 1149124796}
 --- !u!1 &1157389678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7049,10 +7074,10 @@ RectTransform:
   - {fileID: 882214140}
   - {fileID: 59171828}
   - {fileID: 1344486538}
+  - {fileID: 716237}
   - {fileID: 1471347217}
   - {fileID: 2040468804}
   - {fileID: 302350427}
-  - {fileID: 716237}
   - {fileID: 1085413689}
   - {fileID: 1149124795}
   - {fileID: 761865993}
