@@ -7,6 +7,7 @@ public class Card2V : MonoBehaviour, IPointerClickHandler
     public bool _us = true;
     public GameObject _arm;
     public Episode4v2 _episode;
+    public bool _dragon = false;
 
     public bool _isMainCard = false;
 
@@ -44,6 +45,11 @@ public class Card2V : MonoBehaviour, IPointerClickHandler
 
                     if (_isMainCard)
                         _episode.NotifyCardChosen();
+
+                    if (_dragon && !_episode._dragonCards.Contains(this))
+                    {
+                        _episode.IncrementDragonCard(this);
+                    }
 
                     break;
                 }

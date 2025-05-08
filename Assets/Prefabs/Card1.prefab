@@ -535,6 +535,7 @@ MonoBehaviour:
   _us: 1
   _arm: {fileID: 8460963068907204254}
   _episode: {fileID: 0}
+  _dragon: 1
   _isMainCard: 0
   moveDuration: 0.1
   scaleDuration: 0.2
