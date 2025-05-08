@@ -56,9 +56,7 @@ public class Episode4v2 : MonoBehaviour
 
     private void OnEnable()
     {
-
         _isButtle = true;
-        _cardChosen = false;
         _cardUsed = false;
         _firstUpdateDone = false;
 
@@ -114,6 +112,7 @@ public class Episode4v2 : MonoBehaviour
 
             if (_dragonCards.Count == 2)
             {
+                _isUpgrade = true;
                 StartCoroutine(UpgradeCardsAnimation());
             }
         }
@@ -243,7 +242,7 @@ public class Episode4v2 : MonoBehaviour
 
     private IEnumerator AnimateCardUpdate()
     {
-        List<RectTransform> oldPoints = new() { _pointS1, _pointS2, _pointS3 };
+        List<RectTransform> oldPoints = new List<RectTransform> { _pointS1, _pointS2, _pointS3 };
         List<GameObject> oldCards = new();
 
         foreach (RectTransform point in oldPoints)
@@ -297,13 +296,13 @@ public class Episode4v2 : MonoBehaviour
         }
 
         // Перемешка
-        for (int i = 0; i < selectedCards.Count; i++)
-        {
-            var temp = selectedCards[i];
-            int rand = Random.Range(i, selectedCards.Count);
-            selectedCards[i] = selectedCards[rand];
-            selectedCards[rand] = temp;
-        }
+        //for (int i = 0; i < selectedCards.Count; i++)
+        //{
+        //    var temp = selectedCards[i];
+        //    int rand = Random.Range(i, selectedCards.Count);
+        //    selectedCards[i] = selectedCards[rand];
+        //    selectedCards[rand] = temp;
+        //}
 
         RectTransform[] spawnPoints = { _pointS1, _pointS2, _pointS3 };
         for (int i = 0; i < spawnPoints.Length; i++)

@@ -159,7 +159,7 @@
             "logo": ""
         },
         "enableRealtimeShadows": false,
-        "enableLunaCompilerV2": false,
+        "enableLunaCompilerV2": true,
         "optimiseShaderVariantsExport": true,
         "enableMecanimWASM": true,
         "minify": true,
@@ -192,8 +192,8 @@
             },
             {
                 "name": "prefabs",
-                "excluded": true,
-                "forceIncluded": false
+                "excluded": false,
+                "forceIncluded": true
             },
             {
                 "name": "mecanim-wasm",
@@ -1473,10 +1473,6 @@
             },
             {
                 "name": "LunaUnity.Utils.ArrayUtils",
-                "excluded": true
-            },
-            {
-                "name": "LunaUnity.Utils.PrefabUtil",
                 "excluded": true
             },
             {
@@ -6840,10 +6836,6 @@
                 "excluded": true
             },
             {
-                "name": "IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty",
-                "excluded": true
-            },
-            {
                 "name": "System.IComparable",
                 "excluded": false
             },
@@ -8333,7 +8325,7 @@
                     },
                     {
                         "name": "clip32",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "clipu32",
@@ -11653,7 +11645,7 @@
                     },
                     {
                         "name": "Current#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "System$Collections$IEnumerator$Current#get",
@@ -13607,7 +13599,7 @@
                     },
                     {
                         "name": "Next$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Next$1",
@@ -16125,7 +16117,7 @@
                     },
                     {
                         "name": "childCount#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "name#get",
@@ -16193,7 +16185,7 @@
                     },
                     {
                         "name": "GetChild",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsChildOf",
@@ -16301,7 +16293,7 @@
                     },
                     {
                         "name": "GetEnumerator",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Find",
@@ -22800,23 +22792,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "TurnEpisode4And4_1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TurnEpisode5And5_1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TurnEpisode6",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TurnEpisode7",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CheckingCombat",
+                        "name": "TurnEpisode4",
                         "excluded": false
                     }
                 ]
@@ -24137,7 +24113,7 @@
                     },
                     {
                         "name": "Range",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "InitState",
@@ -24307,6 +24283,158 @@
                     },
                     {
                         "name": "Update",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Buttle",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerClick",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartButtle",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ButtleLoss",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Card2V",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerClick",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateCardMoveAndScale",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Episode4v2",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CreateArmUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateMoneyText",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IncrementDragonCard",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TrySpendForCard",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnUpdateButtonClick",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SpawnCards",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ClearOldCards",
+                        "excluded": true
+                    },
+                    {
+                        "name": "NotifyCardChosen",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AnimateCardUpdate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleAndHide",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ScaleUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpgradeCardsAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "MoveToWorldSpace",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ScaleTo",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShakeEffect",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Point",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UpdateButton",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnPointerClick",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "LunaUnity.Utils.PrefabUtil",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsPrefabProxy",
                         "excluded": false
                     }
                 ]

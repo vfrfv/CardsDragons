@@ -56,8 +56,13 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 
     private void OnEnable()
     {
-        _button.SetActive(true);
-        _particleButtun.Play();
+        _particleButtun.Stop();
+        _button.SetActive(false);
+        _battle.gameObject.SetActive(true);
+        StartCoroutine(BattleSequence());
+
+        //_button.SetActive(true);
+        //_particleButtun.Play();
         _particleDragon.Stop();
     }
 
