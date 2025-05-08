@@ -250,6 +250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61533378360e8ca4b912af45d8bfe03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _us: 1
+  _arm: {fileID: 0}
+  _episode: {fileID: 0}
+  _isMainCard: 0
+  moveDuration: 0.1
+  scaleDuration: 0.2
+  targetScale: {x: 0.8, y: 0.8, z: 1}
 --- !u!1 &5126575064743752957
 GameObject:
   m_ObjectHideFlags: 0
