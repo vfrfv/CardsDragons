@@ -32,6 +32,9 @@ public class Episode4v2 : MonoBehaviour
 
     [SerializeField] private GameObject _layer;
 
+    [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private ParticleSystem _particle2;
+
     public Buttle _buttle;
 
     public List<Card2V> _dragonCards = new List<Card2V>();
@@ -52,6 +55,7 @@ public class Episode4v2 : MonoBehaviour
 
     private void OnEnable()
     {
+
         _isButtle = true;
         _cardChosen = false;
         _cardUsed = false;
@@ -60,6 +64,8 @@ public class Episode4v2 : MonoBehaviour
         SpawnCards();
         _updateButton.SetActive(true);
         UpdateMoneyText();
+        _particle.Play();
+        _particle2.Play();
     }
 
     public void CreateArmUp()
@@ -76,6 +82,11 @@ public class Episode4v2 : MonoBehaviour
     {
         _TMony.text = _mony.ToString();
 
+        if(_mony< 3 )
+        {
+            _particle2.Stop();
+        }
+
         if (_mony <= 1)
         {
             _armU.gameObject.SetActive(false);
@@ -85,6 +96,11 @@ public class Episode4v2 : MonoBehaviour
         else
         {
             _buttleButton.SetActive(false);
+        }
+
+        if (_mony <= 0)
+        {
+            _particle.Stop();
         }
     }
 

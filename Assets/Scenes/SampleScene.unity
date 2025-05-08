@@ -3917,6 +3917,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936332554}
   m_CullTransparentMesh: 1
+--- !u!1 &941985509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1899250594192068, guid: 6561be0bdcabd634da8ca71c49c14153, type: 3}
+  m_PrefabInstance: {fileID: 632673848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &963057201 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198678818312688868, guid: 5f6d6d77f4d0d074a8033eac55e37e4b, type: 3}
@@ -4465,11 +4470,13 @@ MonoBehaviour:
   _textHealth3: {fileID: 348947235}
   _textDamage3: {fileID: 1334012437}
   _layer: {fileID: 1724396421}
+  _particle: {fileID: 903413857}
+  _particle2: {fileID: 1723005578}
   _buttle: {fileID: 1149124799}
   _dragonCards: []
   _nonDragonCards: []
-  _armO: {fileID: 0}
-  _armU: {fileID: 0}
+  _armO: {fileID: 1470379427}
+  _armU: {fileID: 941985509}
   _cardsDragon: 0
   _isUpgrade: 0
   _isButtle: 0
@@ -6204,6 +6211,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f6d6d77f4d0d074a8033eac55e37e4b, type: 3}
+--- !u!1 &1470379427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1899250594192068, guid: 6561be0bdcabd634da8ca71c49c14153, type: 3}
+  m_PrefabInstance: {fileID: 345932247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1471347214
 GameObject:
   m_ObjectHideFlags: 0
