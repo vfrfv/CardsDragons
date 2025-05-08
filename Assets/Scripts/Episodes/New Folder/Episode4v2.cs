@@ -34,6 +34,7 @@ public class Episode4v2 : MonoBehaviour
 
     [SerializeField] private ParticleSystem _particle;
     [SerializeField] private ParticleSystem _particle2;
+    [SerializeField] private ParticleSystem _particleU;
 
     public Buttle _buttle;
 
@@ -401,8 +402,9 @@ public class Episode4v2 : MonoBehaviour
         Coroutine moveCard2 = StartCoroutine(MoveToWorldSpace(rt2, targetPosition, moveDuration));
 
         // ∆дем, пока обе карты не достигнут целевой позиции
-        yield return moveCard1;
-        yield return moveCard2;
+        yield return new WaitForSeconds(0.4f);
+        _particleU.Play();
+
 
         // ѕосле завершени€ анимации перемещени€, мен€ем родител€ карт на _cardPointUpgrade
         card1.transform.SetParent(_cardPointUpgrade.transform);
@@ -423,6 +425,7 @@ public class Episode4v2 : MonoBehaviour
         // ”величиваем и тр€сем _cardPointUpgrade
         yield return StartCoroutine(ScaleTo(_cardPointUpgrade.GetComponent<RectTransform>(), targetScale * 2f, scaleDuration));
         yield return StartCoroutine(ShakeEffect(_cardPointUpgrade.GetComponent<RectTransform>(), 1f));
+        _particleU.Stop();
 
         // ¬озвращаем _cardPointUpgrade к исходному размеру
         yield return StartCoroutine(ScaleTo(_cardPointUpgrade.GetComponent<RectTransform>(), Vector3.one, scaleDuration));
