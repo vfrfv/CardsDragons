@@ -32,6 +32,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _winInscription3;
 
     [SerializeField] private GameObject _parentsDisplay;
+    [SerializeField] private GameObject _cardL;
 
     public event Action End;
 
@@ -62,6 +63,7 @@ public class Episode3 : MonoBehaviour, IPointerClickHandler
         Battle();
         _button.SetActive(false);
         _particleButton.Stop();
+        _cardL.SetActive(false);
     }
 
     private void Battle()

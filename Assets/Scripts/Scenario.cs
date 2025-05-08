@@ -6,19 +6,19 @@ public class Scenario : MonoBehaviour
     [SerializeField] private Episode1 _episode1;
     [SerializeField] private Episode2 _episode2;
     [SerializeField] private Episode3 _episode3;
-    [SerializeField] private Episode4 _episode4;
-    [SerializeField] private Episode4_1 _episode4_1;
-    [SerializeField] private Episode4_2 _episode4_2;
-    [SerializeField] private Episode5 _episode5;
-    [SerializeField] private Episode5_1 _episode5_1;
-    [SerializeField] private Episode6 _episode6;
-    [SerializeField] private Episode7 _episode7;
+    [SerializeField] private Episode4v2 _episode4v2;
+    //[SerializeField] private Episode4_1 _episode4_1;
+    //[SerializeField] private Episode4_2 _episode4_2;
+    //[SerializeField] private Episode5 _episode5;
+    //[SerializeField] private Episode5_1 _episode5_1;
+    //[SerializeField] private Episode6 _episode6;
+    //[SerializeField] private Episode7 _episode7;
 
-    [SerializeField] private Card _card1__1;
-    [SerializeField] private Card _card1__2;
-    [SerializeField] private Card _card1__3;
+    //[SerializeField] private Card _card1__1;
+    //[SerializeField] private Card _card1__2;
+    //[SerializeField] private Card _card1__3;
 
-    [SerializeField] private Text _coinsText;
+    //[SerializeField] private Text _coinsText;
 
     private Card _takencard1;
     private Card _takencard2;
@@ -31,7 +31,7 @@ public class Scenario : MonoBehaviour
     {
         _episode1.End += TurnEpisode2;
         _episode2.End += TurnEpisode3;
-        //_episode3.End += TurnEpisode4And4_1;
+        _episode3.End += TurnEpisode4;
         //_episode4.End += TurnEpisode5And5_1;
         //_episode5.End += TurnEpisode6;
         //_episode6.End += TurnEpisode7;
@@ -45,7 +45,7 @@ public class Scenario : MonoBehaviour
     {
         _episode1.End -= TurnEpisode2;
         _episode2.End -= TurnEpisode3;
-        //_episode3.End -= TurnEpisode4And4_1;
+        _episode3.End -= TurnEpisode4;
         //_episode4.End -= TurnEpisode5And5_1;
         //_episode5.End -= TurnEpisode6;
         //_episode6.End -= TurnEpisode7;
@@ -67,6 +67,12 @@ public class Scenario : MonoBehaviour
     {
         _episode2.enabled = false;
         _episode3.enabled = true;
+    }
+
+    private void TurnEpisode4()
+    {
+        _episode3.enabled = false;
+        _episode4v2.enabled = true;
     }
 
     //private void TurnEpisode4And4_1()
