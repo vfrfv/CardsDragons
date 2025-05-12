@@ -36,7 +36,10 @@ public class Card2V : MonoBehaviour, IPointerClickHandler, IEventSystemHandler
 		{
 			_episode.CreateArmUp();
 		}
-		_episode._armO.gameObject.SetActive(false);
+		if (_episode._armO != null)
+		{
+			_episode._armO.gameObject.SetActive(false);
+		}
 		if (!_us || !(_episode != null) || !_episode.TrySpendForCard())
 		{
 			return;

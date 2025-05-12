@@ -15,6 +15,8 @@ public class Buttle : MonoBehaviour, IPointerClickHandler, IEventSystemHandler
 	[SerializeField]
 	private Episode4_2 _episode4_2;
 
+	public GameObject _particle;
+
 	private void OnEnable()
 	{
 		_buttonButtle.SetActive(true);
@@ -24,6 +26,7 @@ public class Buttle : MonoBehaviour, IPointerClickHandler, IEventSystemHandler
 	{
 		StartButtle();
 		_buttonShop.SetActive(false);
+		_particle.SetActive(false);
 	}
 
 	private void StartButtle()

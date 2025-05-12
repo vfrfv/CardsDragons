@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 {
@@ -40,6 +41,10 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _winInscription;
     [SerializeField] private GameObject _winInscription2;
     [SerializeField] private GameObject _winInscription3;
+
+    public Button _buttonF;
+
+    bool _two;
 
     private void Awake()
     {
@@ -80,6 +85,19 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         List<Card2V> combinedCards = new List<Card2V>();
         if (list1 != null) combinedCards.AddRange(list1);
         if (list2 != null) combinedCards.AddRange(list2);
+
+
+        if (list1.Count > 0 && list2.Count > 0)
+        {
+            Debug.Log("Два листа");
+            _two = true;
+        }
+        else
+        {
+            Debug.Log("Один листа");
+            _two = false;
+        }
+
 
         if (combinedCards.Count == 0)
         {
@@ -126,9 +144,18 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 
         if (_cardDracone4 != null)
         {
-            yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem5, returnToOriginal: false));
-            //_cardDracone4.PlayParticle();
-            _cardDracone4.gameObject.SetActive(false);
+            if (_two == true)
+            {
+                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem5, returnToOriginal: false));
+                //_cardDracone4.PlayParticle();
+                _cardDracone4.gameObject.SetActive(false);
+            }
+            else
+            {
+                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem9, returnToOriginal: false));
+                //_cardDracone4.PlayParticle();
+                _cardDracone4.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -169,10 +196,20 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         // === Dracone5 атакует Enemye2 ===
 
         // === Enemye3 атакует Dracone5 (одиночная атака) ===
-        yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem9));
-        //_cardDracone5.PlayParticle();
-        _cardDracone5.gameObject.SetActive(false);
+        if (_cardDracone5 != null)
+        {
+            if (_two == true)
+            {
+                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem9));
+                _cardDracone5.gameObject.SetActive(false);
+            }
+            else
+            {
+                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem5));
+                _cardDracone5.gameObject.SetActive(false);
+            }
 
+        }
         yield return new WaitForSeconds(1f);
 
         _winDefeat.SetActive(true);
@@ -180,6 +217,7 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
 
         yield return new WaitForSeconds(2f);
         _winFinal.gameObject.SetActive(true);
+
     }
 
     private IEnumerator AnimateAttack(GameObject attacker, GameObject target, ParticleSystem effect, bool returnToOriginal = true)

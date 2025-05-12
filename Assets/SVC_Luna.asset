@@ -344,54 +344,6 @@ MonoBehaviour:
     - _
   _usedByLunaBuild:
   - shaderCompilerPlatform: 5
-    shader: {fileID: -6465566751694194690, guid: 1a29b4d27eb8b04479ef89c00dea533d, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords: []
-  - shaderCompilerPlatform: 9
-    shader: {fileID: -6465566751694194690, guid: 1a29b4d27eb8b04479ef89c00dea533d, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords: []
-  - shaderCompilerPlatform: 5
-    shader: {fileID: -6465566751694194690, guid: 1581eccce46ba384596a1dce7936ab19, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - _CFXR_RADIAL_UV
-    - _FADING_ON
-  - shaderCompilerPlatform: 9
-    shader: {fileID: -6465566751694194690, guid: 1581eccce46ba384596a1dce7936ab19, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - _CFXR_RADIAL_UV
-    - _FADING_ON
-  - shaderCompilerPlatform: 5
-    shader: {fileID: -6465566751694194690, guid: 67dfcda17071f4a41be79c4049965e67, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - _FADING_ON
-  - shaderCompilerPlatform: 9
-    shader: {fileID: -6465566751694194690, guid: 67dfcda17071f4a41be79c4049965e67, type: 3}
-    passType: 13
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - _FADING_ON
-  - shaderCompilerPlatform: 5
     shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
     passType: 0
     passId: 0
@@ -425,7 +377,7 @@ MonoBehaviour:
     - _FADING_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 1043
+  version: 1234
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0
@@ -730,17 +682,21 @@ MonoBehaviour:
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_GLOW_POW_P2
           - _CFXR_GLOW_POW_P4
           - _CFXR_GLOW_POW_P8
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _FADING_ON
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -823,20 +779,26 @@ MonoBehaviour:
           - _CFXR_GLOW_POW_P2
           - _CFXR_GLOW_POW_P4
           - _CFXR_GLOW_POW_P8
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _FADING_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DITHERED_SHADOWS_ON
           - _CFXR_DITHERED_SHADOWS_CUSTOMTEXTURE
+          hasDiscard: 1
         - Keywords:
           - SHADOWS_DEPTH
+          hasDiscard: 0
         - Keywords:
           - SHADOWS_CUBE
+          hasDiscard: 0
         KeywordsMinimalCardinality: 2
         ContainsInvalidVariant: 0
         VariantStructures: []
@@ -1371,21 +1333,27 @@ MonoBehaviour:
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_RADIAL_UV
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_WORLD_SPACE_RING
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _FADING_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _ALPHATEST_ON
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -1464,23 +1432,30 @@ MonoBehaviour:
         - Keywords:
           - _
           - _CFXR_RADIAL_UV
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_WORLD_SPACE_RING
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _ALPHATEST_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DITHERED_SHADOWS_ON
           - _CFXR_DITHERED_SHADOWS_CUSTOMTEXTURE
+          hasDiscard: 1
         - Keywords:
           - SHADOWS_DEPTH
+          hasDiscard: 0
         - Keywords:
           - SHADOWS_CUBE
+          hasDiscard: 0
         KeywordsMinimalCardinality: 2
         ContainsInvalidVariant: 0
         VariantStructures: []
@@ -2708,36 +2683,46 @@ MonoBehaviour:
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_SECONDCOLOR_LERP
           - _CFXR_FONT_COLORS
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_EDGE_FADING
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_LIGHTING_DIRECT
           - _CFXR_LIGHTING_INDIRECT
           - _CFXR_LIGHTING_ALL
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_LIGHTING_WPOS_OFFSET
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_LIGHTING_BACK
+          hasDiscard: 1
         - Keywords:
           - _
           - _NORMALMAP
+          hasDiscard: 1
         - Keywords:
           - _
           - _EMISSION
+          hasDiscard: 1
         - Keywords:
           - _
           - _FADING_ON
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -2900,14 +2885,18 @@ MonoBehaviour:
         - Keywords:
           - _
           - _CFXR_DISSOLVE
+          hasDiscard: 1
         - Keywords:
           - _
           - _CFXR_DITHERED_SHADOWS_ON
           - _CFXR_DITHERED_SHADOWS_CUSTOMTEXTURE
+          hasDiscard: 1
         - Keywords:
           - SHADOWS_DEPTH
+          hasDiscard: 0
         - Keywords:
           - SHADOWS_CUBE
+          hasDiscard: 0
         KeywordsMinimalCardinality: 2
         ContainsInvalidVariant: 0
         VariantStructures: []
@@ -3550,10 +3539,12 @@ MonoBehaviour:
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         - Keywords:
           - _
           - POINT
           - SPOT
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -3694,6 +3685,7 @@ MonoBehaviour:
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -3741,10 +3733,13 @@ MonoBehaviour:
         - Keywords:
           - __
           - INSTANCING_ON
+          hasDiscard: 1
         - Keywords:
           - SHADOWS_DEPTH
+          hasDiscard: 0
         - Keywords:
           - SHADOWS_CUBE
+          hasDiscard: 0
         KeywordsMinimalCardinality: 2
         ContainsInvalidVariant: 0
         VariantStructures: []
@@ -3863,19 +3858,24 @@ MonoBehaviour:
           - __
           - INSTANCING_ON
           - PROCEDURAL_INSTANCING_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _ALPHATEST_ON
           - _ALPHABLEND_ON
           - _ALPHAPREMULTIPLY_ON
           - _ALPHAMODULATE_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _REQUIRE_UV2
+          hasDiscard: 1
         - Keywords:
           - SHADOWS_DEPTH
+          hasDiscard: 0
         - Keywords:
           - SHADOWS_CUBE
+          hasDiscard: 0
         KeywordsMinimalCardinality: 2
         ContainsInvalidVariant: 0
         VariantStructures: []
@@ -4240,27 +4240,34 @@ MonoBehaviour:
         - Keywords:
           - __
           - SOFTPARTICLES_ON
+          hasDiscard: 1
         - Keywords:
           - __
           - FOG_LINEAR
           - FOG_EXP
           - FOG_EXP2
+          hasDiscard: 1
         - Keywords:
           - __
           - INSTANCING_ON
           - PROCEDURAL_INSTANCING_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _NORMALMAP
+          hasDiscard: 1
         - Keywords:
           - _
           - _FADING_ON
+          hasDiscard: 1
         - Keywords:
           - _
           - _REQUIRE_UV2
+          hasDiscard: 1
         - Keywords:
           - _
           - EFFECT_BUMP
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:
@@ -4989,9 +4996,11 @@ MonoBehaviour:
         - Keywords:
           - _
           - UNITY_UI_CLIP_RECT
+          hasDiscard: 1
         - Keywords:
           - _
           - UNITY_UI_ALPHACLIP
+          hasDiscard: 1
         KeywordsMinimalCardinality: 0
         ContainsInvalidVariant: 0
         VariantStructures:

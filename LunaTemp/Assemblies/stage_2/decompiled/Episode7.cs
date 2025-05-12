@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Episode7 : MonoBehaviour, IPointerClickHandler, IEventSystemHandler
 {
@@ -69,6 +70,8 @@ public class Episode7 : MonoBehaviour, IPointerClickHandler, IEventSystemHandler
 
 	[SerializeField]
 	private Episode3 _episode3;
+
+	public Button button;
 
 	private CanvasGroup _victoryCanvasGroup;
 
