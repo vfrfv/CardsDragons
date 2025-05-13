@@ -728,7 +728,8 @@ if ( TRACE ) { TRACE( "ClickCta#Click", this ); }
             targetScale: null,
             rectTransform: null,
             originalScale: null,
-            originalLocalPosition: null
+            originalLocalPosition: null,
+            originalParent: null
         },
         events: {
             End: null
@@ -755,6 +756,7 @@ if ( TRACE ) { TRACE( "Episode1#OnEnable", this ); }
                 this._arm.SetActive(true);
                 this.originalScale = this.rectTransform.localScale.$clone();
                 this.originalLocalPosition = this.rectTransform.localPosition.$clone();
+                this.originalParent = this.rectTransform.parent;
             },
             /*Episode1.OnEnable end.*/
 
@@ -775,6 +777,10 @@ if ( TRACE ) { TRACE( "Episode1#AnimateCard", this ); }
                 var $step = 0,
                     $jumpFromFinally,
                     $returnValue,
+                    worldPosPoints,
+                    worldPosUnit,
+                    localTargetPosPoints,
+                    localTargetPosUnit,
                     $async_e;
 
                 var $enumerator = new Bridge.GeneratorEnumerator(Bridge.fn.bind(this, function () {
@@ -782,12 +788,16 @@ if ( TRACE ) { TRACE( "Episode1#AnimateCard", this ); }
                         for (;;) {
                             switch ($step) {
                                 case 0: {
-                                    $enumerator.current = this.StartCoroutine$1(this.ScaleTo(this.targetScale.$clone(), this.scaleDuration));
+                                    worldPosPoints = this._points.position.$clone();
+                                        worldPosUnit = this._unit.position.$clone();
+                                        localTargetPosPoints = this.originalParent.InverseTransformPoint(worldPosPoints);
+                                        localTargetPosUnit = this.originalParent.InverseTransformPoint(worldPosUnit);
+                                        $enumerator.current = this.StartCoroutine$1(this.ScaleTo(this.targetScale.$clone(), this.scaleDuration));
                                         $step = 1;
                                         return true;
                                 }
                                 case 1: {
-                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._points.localPosition.$clone(), this.moveDuration));
+                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(localTargetPosPoints.$clone(), this.moveDuration));
                                         $step = 2;
                                         return true;
                                 }
@@ -797,14 +807,14 @@ if ( TRACE ) { TRACE( "Episode1#AnimateCard", this ); }
                                         return true;
                                 }
                                 case 3: {
-                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._unit.localPosition.$clone(), this.moveDuration));
+                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(localTargetPosUnit.$clone(), this.moveDuration));
                                         $step = 4;
                                         return true;
                                 }
                                 case 4: {
                                     this._particleSystem.Play();
                                         this._unit.gameObject.SetActive(false);
-                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._points.localPosition.$clone(), this.moveDuration));
+                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(localTargetPosPoints.$clone(), this.moveDuration));
                                         $step = 5;
                                         return true;
                                 }
@@ -978,7 +988,8 @@ if ( TRACE ) { TRACE( "Episode1#MoveTo", this ); }
             targetScale: null,
             rectTransform: null,
             originalScale: null,
-            originalLocalPosition: null
+            originalLocalPosition: null,
+            originalParent: null
         },
         events: {
             End: null
@@ -1005,6 +1016,7 @@ if ( TRACE ) { TRACE( "Episode2#OnEnable", this ); }
                 this._arm.SetActive(true);
                 this.originalScale = this.rectTransform.localScale.$clone();
                 this.originalLocalPosition = this.rectTransform.localPosition.$clone();
+                this.originalParent = this.rectTransform.parent;
             },
             /*Episode2.OnEnable end.*/
 
@@ -1025,6 +1037,12 @@ if ( TRACE ) { TRACE( "Episode2#AnimateCard", this ); }
                 var $step = 0,
                     $jumpFromFinally,
                     $returnValue,
+                    worldPosPoints,
+                    worldPosUnit1,
+                    worldPosUnit2,
+                    localPosPoints,
+                    localPosUnit1,
+                    localPosUnit2,
                     $async_e;
 
                 var $enumerator = new Bridge.GeneratorEnumerator(Bridge.fn.bind(this, function () {
@@ -1032,12 +1050,18 @@ if ( TRACE ) { TRACE( "Episode2#AnimateCard", this ); }
                         for (;;) {
                             switch ($step) {
                                 case 0: {
-                                    $enumerator.current = this.StartCoroutine$1(this.ScaleTo(this.targetScale.$clone(), this.scaleDuration));
+                                    worldPosPoints = this._points.position.$clone();
+                                        worldPosUnit1 = this._unit1.position.$clone();
+                                        worldPosUnit2 = this._unit2.position.$clone();
+                                        localPosPoints = this.originalParent.InverseTransformPoint(worldPosPoints);
+                                        localPosUnit1 = this.originalParent.InverseTransformPoint(worldPosUnit1);
+                                        localPosUnit2 = this.originalParent.InverseTransformPoint(worldPosUnit2);
+                                        $enumerator.current = this.StartCoroutine$1(this.ScaleTo(this.targetScale.$clone(), this.scaleDuration));
                                         $step = 1;
                                         return true;
                                 }
                                 case 1: {
-                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._points.localPosition.$clone(), this.moveDuration));
+                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(localPosPoints.$clone(), this.moveDuration));
                                         $step = 2;
                                         return true;
                                 }
@@ -1047,26 +1071,26 @@ if ( TRACE ) { TRACE( "Episode2#AnimateCard", this ); }
                                         return true;
                                 }
                                 case 3: {
-                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._unit1.localPosition.$clone(), this.moveDuration));
+                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(localPosUnit1.$clone(), this.moveDuration));
                                         $step = 4;
                                         return true;
                                 }
                                 case 4: {
                                     this._unit1.gameObject.SetActive(false);
                                         this._particleSystem1.Play();
-                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._points.localPosition.$clone(), this.moveDuration));
+                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(localPosPoints.$clone(), this.moveDuration));
                                         $step = 5;
                                         return true;
                                 }
                                 case 5: {
-                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._unit2.localPosition.$clone(), this.moveDuration));
+                                    $enumerator.current = this.StartCoroutine$1(this.MoveTo(localPosUnit2.$clone(), this.moveDuration));
                                         $step = 6;
                                         return true;
                                 }
                                 case 6: {
                                     this._unit2.gameObject.SetActive(false);
                                         this._particleSystem2.Play();
-                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(this._points.localPosition.$clone(), this.moveDuration));
+                                        $enumerator.current = this.StartCoroutine$1(this.MoveTo(localPosPoints.$clone(), this.moveDuration));
                                         $step = 7;
                                         return true;
                                 }
@@ -5792,11 +5816,11 @@ if ( TRACE ) { TRACE( "UpdateButton#OnPointerClick", this ); }
     /*ClickCta end.*/
 
     /*Episode1 start.*/
-    $m("Episode1", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCard","t":8,"sn":"AnimateCard","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_arm","t":4,"rt":$n[2].GameObject,"sn":"_arm"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_points","t":4,"rt":$n[2].RectTransform,"sn":"_points"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage","t":4,"rt":$n[3].Text,"sn":"_textDamage"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage2","t":4,"rt":$n[2].GameObject,"sn":"_textDamage2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth","t":4,"rt":$n[3].Text,"sn":"_textHealth"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth2","t":4,"rt":$n[2].GameObject,"sn":"_textHealth2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit","t":4,"rt":$n[2].RectTransform,"sn":"_unit"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[1].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"originalLocalPosition","t":4,"rt":$n[2].Vector3,"sn":"originalLocalPosition"},{"a":1,"n":"originalScale","t":4,"rt":$n[2].Vector3,"sn":"originalScale"},{"a":1,"n":"rectTransform","t":4,"rt":$n[2].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[1].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[2].Vector3,"sn":"targetScale"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
+    $m("Episode1", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCard","t":8,"sn":"AnimateCard","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_arm","t":4,"rt":$n[2].GameObject,"sn":"_arm"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_points","t":4,"rt":$n[2].RectTransform,"sn":"_points"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage","t":4,"rt":$n[3].Text,"sn":"_textDamage"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage2","t":4,"rt":$n[2].GameObject,"sn":"_textDamage2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth","t":4,"rt":$n[3].Text,"sn":"_textHealth"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth2","t":4,"rt":$n[2].GameObject,"sn":"_textHealth2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit","t":4,"rt":$n[2].RectTransform,"sn":"_unit"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[1].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"originalLocalPosition","t":4,"rt":$n[2].Vector3,"sn":"originalLocalPosition"},{"a":1,"n":"originalParent","t":4,"rt":$n[2].Transform,"sn":"originalParent"},{"a":1,"n":"originalScale","t":4,"rt":$n[2].Vector3,"sn":"originalScale"},{"a":1,"n":"rectTransform","t":4,"rt":$n[2].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[1].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[2].Vector3,"sn":"targetScale"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
     /*Episode1 end.*/
 
     /*Episode2 start.*/
-    $m("Episode2", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCard","t":8,"sn":"AnimateCard","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_arm","t":4,"rt":$n[2].GameObject,"sn":"_arm"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_points","t":4,"rt":$n[2].RectTransform,"sn":"_points"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage","t":4,"rt":$n[3].Text,"sn":"_textDamage"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage2","t":4,"rt":$n[2].GameObject,"sn":"_textDamage2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth","t":4,"rt":$n[3].Text,"sn":"_textHealth"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth2","t":4,"rt":$n[2].GameObject,"sn":"_textHealth2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit1","t":4,"rt":$n[2].RectTransform,"sn":"_unit1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit2","t":4,"rt":$n[2].RectTransform,"sn":"_unit2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[1].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"originalLocalPosition","t":4,"rt":$n[2].Vector3,"sn":"originalLocalPosition"},{"a":1,"n":"originalScale","t":4,"rt":$n[2].Vector3,"sn":"originalScale"},{"a":1,"n":"rectTransform","t":4,"rt":$n[2].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[1].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[2].Vector3,"sn":"targetScale"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
+    $m("Episode2", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCard","t":8,"sn":"AnimateCard","rt":$n[0].IEnumerator},{"a":1,"n":"MoveTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"MoveTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"a":1,"n":"OnEnable","t":8,"sn":"OnEnable","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_arm","t":4,"rt":$n[2].GameObject,"sn":"_arm"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem1","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_particleSystem2","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_points","t":4,"rt":$n[2].RectTransform,"sn":"_points"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textCoins","t":4,"rt":$n[3].Text,"sn":"_textCoins"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage","t":4,"rt":$n[3].Text,"sn":"_textDamage"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textDamage2","t":4,"rt":$n[2].GameObject,"sn":"_textDamage2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth","t":4,"rt":$n[3].Text,"sn":"_textHealth"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_textHealth2","t":4,"rt":$n[2].GameObject,"sn":"_textHealth2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit1","t":4,"rt":$n[2].RectTransform,"sn":"_unit1"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"_unit2","t":4,"rt":$n[2].RectTransform,"sn":"_unit2"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[1].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"originalLocalPosition","t":4,"rt":$n[2].Vector3,"sn":"originalLocalPosition"},{"a":1,"n":"originalParent","t":4,"rt":$n[2].Transform,"sn":"originalParent"},{"a":1,"n":"originalScale","t":4,"rt":$n[2].Vector3,"sn":"originalScale"},{"a":1,"n":"rectTransform","t":4,"rt":$n[2].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[1].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[2].Vector3,"sn":"targetScale"},{"a":2,"n":"End","t":2,"ad":{"a":2,"n":"add_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"addEnd","rt":$n[1].Void,"p":[Function]},"r":{"a":2,"n":"remove_End","t":8,"pi":[{"n":"value","pt":Function,"ps":0}],"sn":"removeEnd","rt":$n[1].Void,"p":[Function]}}]}; }, $n);
     /*Episode2 end.*/
 
     /*Episode3 start.*/

@@ -2362,7 +2362,7 @@ Deserializers.productName = "CardsDragons";
 
 Deserializers.lunaInitializationTime = "04/25/2025 11:02:07";
 
-Deserializers.lunaDaysRunning = "16.9";
+Deserializers.lunaDaysRunning = "18.2";
 
 Deserializers.lunaVersion = "6.3.0";
 
@@ -2418,7 +2418,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "6cdfdefa-bcbe-4f00-b18b-d46164be90fa";
+Deserializers.buildID = "e5dcd0a6-d05a-4b85-ae82-c54814568f63";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Rendering","DebugUpdater","RuntimeInit"],["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[["Unity","VisualScripting","RuntimeVSUsageUtility","RuntimeInitializeOnLoadBeforeSceneLoad"]],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[["UnityEngine","Experimental","Rendering","XRSystem","XRSystemInit"]],[]];
 
