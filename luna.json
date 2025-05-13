@@ -85,10 +85,7 @@
             "dotnetVersion": ""
         },
         "assets": {
-            "export": [
-                "resources",
-                "streamingAssets"
-            ],
+            "export": [],
             "excludes": [
                 "**/Editor/",
                 "**/FacebookSDK/",

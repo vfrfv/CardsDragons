@@ -696,18 +696,12 @@ if ( TRACE ) { TRACE( "Card2V#ScaleTo", this ); }
     /*ClickCta start.*/
     Bridge.define("ClickCta", {
         inherits: [UnityEngine.MonoBehaviour],
-        fields: {
-            GameObject: null,
-            GameObject2: null
-        },
         methods: {
             /*ClickCta.Click start.*/
             Click: function () {
 if ( TRACE ) { TRACE( "ClickCta#Click", this ); }
 
-                this.GameObject2.SetActive(true);
                 Luna.Unity.Playable.InstallFullGame();
-                this.GameObject.SetActive(true);
             },
             /*ClickCta.Click end.*/
 
@@ -5794,7 +5788,7 @@ if ( TRACE ) { TRACE( "UpdateButton#OnPointerClick", this ); }
     /*Card2V end.*/
 
     /*ClickCta start.*/
-    $m("ClickCta", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"Click","t":8,"sn":"Click","rt":$n[1].Void},{"a":2,"n":"GameObject","t":4,"rt":$n[2].GameObject,"sn":"GameObject"},{"a":2,"n":"GameObject2","t":4,"rt":$n[2].GameObject,"sn":"GameObject2"}]}; }, $n);
+    $m("ClickCta", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"Click","t":8,"sn":"Click","rt":$n[1].Void}]}; }, $n);
     /*ClickCta end.*/
 
     /*Episode1 start.*/
