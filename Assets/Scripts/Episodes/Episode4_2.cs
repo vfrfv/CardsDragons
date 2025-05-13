@@ -146,13 +146,17 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         {
             if (_two == true)
             {
-                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem5, returnToOriginal: false));
+                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, returnToOriginal: false));
                 //_cardDracone4.PlayParticle();
+                CardEnemy cardEnemy = _cardEnemye2.GetComponent<CardEnemy>();
+                cardEnemy._particleSystem.Play();
                 _cardDracone4.gameObject.SetActive(false);
             }
             else
             {
-                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem9, returnToOriginal: false));
+                yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, returnToOriginal: false));
+                CardEnemy cardEnemy = _cardEnemye2.GetComponent<CardEnemy>();
+                cardEnemy._particleSystem.Play();
                 //_cardDracone4.PlayParticle();
                 _cardDracone4.gameObject.SetActive(false);
             }
@@ -200,12 +204,16 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler
         {
             if (_two == true)
             {
-                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem9));
+                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
+                CardEnemy cardEnemy = _cardEnemye3.GetComponent<CardEnemy>();
+                cardEnemy._particleSystem.Play();
                 _cardDracone5.gameObject.SetActive(false);
             }
             else
             {
-                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem5));
+                yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
+                CardEnemy cardEnemy = _cardEnemye3.GetComponent<CardEnemy>();
+                cardEnemy._particleSystem.Play();
                 _cardDracone5.gameObject.SetActive(false);
             }
 

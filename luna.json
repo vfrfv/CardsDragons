@@ -7806,6 +7806,10 @@
             {
                 "name": "Luna.Unity.DTO.UnityEngine.Assets.SoftShadowQuality",
                 "excluded": false
+            },
+            {
+                "name": "CardEnemy",
+                "excluded": false
             }
         ],
         "unusedMethods": [

@@ -693,6 +693,15 @@ if ( TRACE ) { TRACE( "Card2V#ScaleTo", this ); }
     });
     /*Card2V end.*/
 
+    /*CardEnemy start.*/
+    Bridge.define("CardEnemy", {
+        inherits: [UnityEngine.MonoBehaviour],
+        fields: {
+            _particleSystem: null
+        }
+    });
+    /*CardEnemy end.*/
+
     /*ClickCta start.*/
     Bridge.define("ClickCta", {
         inherits: [UnityEngine.MonoBehaviour],
@@ -2425,7 +2434,11 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                     $jumpFromFinally,
                     $returnValue,
                     info1,
+                    cardEnemy4,
+                    cardEnemy3,
                     info2,
+                    cardEnemy2,
+                    cardEnemy,
                     $async_e;
 
                 var $enumerator = new Bridge.GeneratorEnumerator(Bridge.fn.bind(this, function () {
@@ -2494,22 +2507,26 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                         }
                                 }
                                 case 9: {
-                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, this._particleSystem5, false));
+                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, null, false));
                                         $step = 10;
                                         return true;
                                 }
                                 case 10: {
-                                    this._cardDracone4.gameObject.SetActive(false);
+                                    cardEnemy4 = this._cardEnemye2.GetComponent(CardEnemy);
+                                        cardEnemy4._particleSystem.Play();
+                                        this._cardDracone4.gameObject.SetActive(false);
                                     $step = 13;
                                     continue;
                                 }
                                 case 11: {
-                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, this._particleSystem9, false));
+                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye2, this._cardDracone4.gameObject, null, false));
                                         $step = 12;
                                         return true;
                                 }
                                 case 12: {
-                                    this._cardDracone4.gameObject.SetActive(false);
+                                    cardEnemy3 = this._cardEnemye2.GetComponent(CardEnemy);
+                                        cardEnemy3._particleSystem.Play();
+                                        this._cardDracone4.gameObject.SetActive(false);
                                     $step = 13;
                                     continue;
                                 }
@@ -2565,22 +2582,26 @@ if ( TRACE ) { TRACE( "Episode4_2#BattleSequence", this ); }
                                         }
                                 }
                                 case 20: {
-                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, this._particleSystem9));
+                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, null));
                                         $step = 21;
                                         return true;
                                 }
                                 case 21: {
-                                    this._cardDracone5.gameObject.SetActive(false);
+                                    cardEnemy2 = this._cardEnemye3.GetComponent(CardEnemy);
+                                        cardEnemy2._particleSystem.Play();
+                                        this._cardDracone5.gameObject.SetActive(false);
                                     $step = 24;
                                     continue;
                                 }
                                 case 22: {
-                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, this._particleSystem5));
+                                    $enumerator.current = this.StartCoroutine$1(this.AnimateAttack(this._cardEnemye3, this._cardDracone5.gameObject, null));
                                         $step = 23;
                                         return true;
                                 }
                                 case 23: {
-                                    this._cardDracone5.gameObject.SetActive(false);
+                                    cardEnemy = this._cardEnemye3.GetComponent(CardEnemy);
+                                        cardEnemy._particleSystem.Play();
+                                        this._cardDracone5.gameObject.SetActive(false);
                                     $step = 24;
                                     continue;
                                 }
@@ -5810,6 +5831,10 @@ if ( TRACE ) { TRACE( "UpdateButton#OnPointerClick", this ); }
     /*Card2V start.*/
     $m("Card2V", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":1,"n":"AnimateCardMoveAndScale","t":8,"pi":[{"n":"targetPoint","pt":Point,"ps":0}],"sn":"AnimateCardMoveAndScale","rt":$n[0].IEnumerator,"p":[Point]},{"a":1,"n":"Awake","t":8,"sn":"Awake","rt":$n[1].Void},{"a":2,"n":"OnPointerClick","t":8,"pi":[{"n":"eventData","pt":$n[4].PointerEventData,"ps":0}],"sn":"OnPointerClick","rt":$n[1].Void,"p":[$n[4].PointerEventData]},{"a":1,"n":"ScaleTo","t":8,"pi":[{"n":"target","pt":$n[2].Vector3,"ps":0},{"n":"duration","pt":$n[1].Single,"ps":1}],"sn":"ScaleTo","rt":$n[0].IEnumerator,"p":[$n[2].Vector3,$n[1].Single]},{"a":2,"n":"_arm","t":4,"rt":$n[2].GameObject,"sn":"_arm"},{"a":2,"n":"_dragon","t":4,"rt":$n[1].Boolean,"sn":"_dragon","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"_episode","t":4,"rt":Episode4v2,"sn":"_episode"},{"a":2,"n":"_isMainCard","t":4,"rt":$n[1].Boolean,"sn":"_isMainCard","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"a":2,"n":"_us","t":4,"rt":$n[1].Boolean,"sn":"_us","box":function ($v) { return Bridge.box($v, System.Boolean, System.Boolean.toString);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"moveDuration","t":4,"rt":$n[1].Single,"sn":"moveDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"a":1,"n":"rectTransform","t":4,"rt":$n[2].RectTransform,"sn":"rectTransform"},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"scaleDuration","t":4,"rt":$n[1].Single,"sn":"scaleDuration","box":function ($v) { return Bridge.box($v, System.Single, System.Single.format, System.Single.getHashCode);}},{"at":[new UnityEngine.SerializeFieldAttribute()],"a":1,"n":"targetScale","t":4,"rt":$n[2].Vector3,"sn":"targetScale"}]}; }, $n);
     /*Card2V end.*/
+
+    /*CardEnemy start.*/
+    $m("CardEnemy", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"_particleSystem","t":4,"rt":$n[2].ParticleSystem,"sn":"_particleSystem"}]}; }, $n);
+    /*CardEnemy end.*/
 
     /*ClickCta start.*/
     $m("ClickCta", function () { return {"att":1048577,"a":2,"m":[{"a":2,"isSynthetic":true,"n":".ctor","t":1,"sn":"ctor"},{"a":2,"n":"Click","t":8,"sn":"Click","rt":$n[1].Void}]}; }, $n);

@@ -192,12 +192,16 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 		{
 			if (_two)
 			{
-				yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem5, false));
+				yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, false));
+				CardEnemy cardEnemy4 = _cardEnemye2.GetComponent<CardEnemy>();
+				cardEnemy4._particleSystem.Play();
 				_cardDracone4.gameObject.SetActive(false);
 			}
 			else
 			{
-				yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, _particleSystem9, false));
+				yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, false));
+				CardEnemy cardEnemy3 = _cardEnemye2.GetComponent<CardEnemy>();
+				cardEnemy3._particleSystem.Play();
 				_cardDracone4.gameObject.SetActive(false);
 			}
 			ReturnInfo info2 = _cardEnemye2.GetComponent<ReturnInfo>();
@@ -214,12 +218,16 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 				{
 					if (_two)
 					{
-						yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem9));
+						yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
+						CardEnemy cardEnemy2 = _cardEnemye3.GetComponent<CardEnemy>();
+						cardEnemy2._particleSystem.Play();
 						_cardDracone5.gameObject.SetActive(false);
 					}
 					else
 					{
-						yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, _particleSystem5));
+						yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
+						CardEnemy cardEnemy = _cardEnemye3.GetComponent<CardEnemy>();
+						cardEnemy._particleSystem.Play();
 						_cardDracone5.gameObject.SetActive(false);
 					}
 				}
