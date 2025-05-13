@@ -25,6 +25,7 @@ public class Episode2 : MonoBehaviour, IPointerClickHandler
     private RectTransform rectTransform;
     private Vector3 originalScale;
     private Vector3 originalLocalPosition;
+    private Transform originalParent;
 
     public event Action End;
 
@@ -35,6 +36,7 @@ public class Episode2 : MonoBehaviour, IPointerClickHandler
 
         originalScale = rectTransform.localScale;
         originalLocalPosition = rectTransform.localPosition;
+        originalParent = rectTransform.parent;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -46,29 +48,36 @@ public class Episode2 : MonoBehaviour, IPointerClickHandler
 
     private IEnumerator AnimateCard()
     {
-        yield return StartCoroutine(ScaleTo(targetScale, scaleDuration));
+        // Получаем позиции в мировых координатах
+        Vector3 worldPosPoints = _points.position;
+        Vector3 worldPosUnit1 = _unit1.position;
+        Vector3 worldPosUnit2 = _unit2.position;
 
-        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
+        // Переводим их в локальные координаты относительно исходного родителя
+        Vector3 localPosPoints = originalParent.InverseTransformPoint(worldPosPoints);
+        Vector3 localPosUnit1 = originalParent.InverseTransformPoint(worldPosUnit1);
+        Vector3 localPosUnit2 = originalParent.InverseTransformPoint(worldPosUnit2);
+
+        yield return StartCoroutine(ScaleTo(targetScale, scaleDuration));
+        yield return StartCoroutine(MoveTo(localPosPoints, moveDuration));
 
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
-
-        yield return StartCoroutine(MoveTo(_unit1.localPosition, moveDuration));
+        yield return StartCoroutine(MoveTo(localPosUnit1, moveDuration));
         _unit1.gameObject.SetActive(false);
         _particleSystem1.Play();
 
-        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
-
-        yield return StartCoroutine(MoveTo(_unit2.localPosition, moveDuration));
+        yield return StartCoroutine(MoveTo(localPosPoints, moveDuration));
+        yield return StartCoroutine(MoveTo(localPosUnit2, moveDuration));
         _unit2.gameObject.SetActive(false);
         _particleSystem2.Play();
 
-        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
+        yield return StartCoroutine(MoveTo(localPosPoints, moveDuration));
 
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);
         _textHealth2.gameObject.SetActive(true);
         _textDamage2.gameObject.SetActive(true);
-        // Подождать для показа эффекта
+
         yield return new WaitForSecondsRealtime(0.2f);
 
         End?.Invoke();

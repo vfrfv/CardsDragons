@@ -23,6 +23,7 @@ public class Episode1 : MonoBehaviour, IPointerClickHandler
     private RectTransform rectTransform;
     private Vector3 originalScale;
     private Vector3 originalLocalPosition;
+    private Transform originalParent;
 
     public event Action End;
 
@@ -33,6 +34,7 @@ public class Episode1 : MonoBehaviour, IPointerClickHandler
 
         originalScale = rectTransform.localScale;
         originalLocalPosition = rectTransform.localPosition;
+        originalParent = rectTransform.parent;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -44,20 +46,23 @@ public class Episode1 : MonoBehaviour, IPointerClickHandler
 
     private IEnumerator AnimateCard()
     {
+        // ѕолучаем мировые позиции целей
+        Vector3 worldPosPoints = _points.position;
+        Vector3 worldPosUnit = _unit.position;
+
+        // ѕереводим в локальные координаты относительно текущего родител€ rectTransform
+        Vector3 localTargetPosPoints = originalParent.InverseTransformPoint(worldPosPoints);
+        Vector3 localTargetPosUnit = originalParent.InverseTransformPoint(worldPosUnit);
+
         yield return StartCoroutine(ScaleTo(targetScale, scaleDuration));
-
-        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
-
+        yield return StartCoroutine(MoveTo(localTargetPosPoints, moveDuration));
         yield return StartCoroutine(ScaleTo(originalScale, scaleDuration));
-
-        yield return StartCoroutine(MoveTo(_unit.localPosition, moveDuration));
+        yield return StartCoroutine(MoveTo(localTargetPosUnit, moveDuration));
 
         _particleSystem.Play();
         _unit.gameObject.SetActive(false);
 
-        yield return StartCoroutine(MoveTo(_points.localPosition, moveDuration));
-
-
+        yield return StartCoroutine(MoveTo(localTargetPosPoints, moveDuration));
 
         _textDamage.gameObject.SetActive(false);
         _textHealth.gameObject.SetActive(false);
