@@ -287,8 +287,24 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 
 	private IEnumerator ReturnToOriginalPosition(RectTransform attackerRect, AttackState state)
 	{
+		Vector3 targetWorldPos = state.OriginalParent.TransformPoint(state.OriginalLocalPos);
+		StartCoroutine(MoveToWorldPosition(attackerRect, targetWorldPos, 0.2f));
+		yield return new WaitForSeconds(0.2f);
 		attackerRect.SetParent(state.OriginalParent, true);
-		yield return StartCoroutine(MoveTo(attackerRect, state.OriginalLocalPos, 0.2f));
+		attackerRect.localPosition = state.OriginalLocalPos;
+	}
+
+	private IEnumerator MoveToWorldPosition(RectTransform rectTransform, Vector3 targetWorldPos, float duration)
+	{
+		float time = 0f;
+		Vector3 startPos = rectTransform.position;
+		while (time < duration)
+		{
+			rectTransform.position = Vector3.Lerp(startPos, targetWorldPos, time / duration);
+			time += Time.unscaledDeltaTime;
+			yield return null;
+		}
+		rectTransform.position = targetWorldPos;
 	}
 
 	private IEnumerator ScaleTo(RectTransform rectTransform, Vector3 target, float duration)

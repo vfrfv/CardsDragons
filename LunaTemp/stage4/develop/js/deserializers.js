@@ -2369,7 +2369,7 @@ Deserializers.productName = "CardsDragons";
 
 Deserializers.lunaInitializationTime = "04/25/2025 11:02:07";
 
-Deserializers.lunaDaysRunning = "18.2";
+Deserializers.lunaDaysRunning = "18.8";
 
 Deserializers.lunaVersion = "6.3.0";
 
@@ -2401,7 +2401,7 @@ Deserializers.isRuntimeAnalysisEnabledForCode = "True";
 
 Deserializers.runtimeAnalysisExcludedClassesCount = "1580";
 
-Deserializers.runtimeAnalysisExcludedMethodsCount = "3055";
+Deserializers.runtimeAnalysisExcludedMethodsCount = "3054";
 
 Deserializers.runtimeAnalysisExcludedModules = "physics3d, physics2d, reflection";
 
@@ -2425,7 +2425,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "d913fe2f-32e3-4481-b5af-5554bf944d68";
+Deserializers.buildID = "cfe5cfcb-1de0-4b6c-b1bf-88dbb62fbf10";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Rendering","DebugUpdater","RuntimeInit"],["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[["Unity","VisualScripting","RuntimeVSUsageUtility","RuntimeInitializeOnLoadBeforeSceneLoad"]],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[["UnityEngine","Experimental","Rendering","XRSystem","XRSystemInit"]],[]];
 

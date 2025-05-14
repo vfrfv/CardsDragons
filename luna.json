@@ -16229,7 +16229,7 @@
                     },
                     {
                         "name": "TransformPoint$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TransformPoint",
@@ -23861,6 +23861,10 @@
                     },
                     {
                         "name": "AnimatePopIn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveToWorldPosition",
                         "excluded": false
                     }
                 ]
