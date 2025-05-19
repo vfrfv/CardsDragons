@@ -1154,26 +1154,30 @@ Deserializers["Episode4_2"] = function (request, data, root) {
   request.r(i739[6], i739[7], 0, i738, '_cardEnemye1')
   request.r(i739[8], i739[9], 0, i738, '_cardEnemye2')
   request.r(i739[10], i739[11], 0, i738, '_cardEnemye3')
-  request.r(i739[12], i739[13], 0, i738, '_cardDracone1')
-  request.r(i739[14], i739[15], 0, i738, '_cardDracone2')
-  request.r(i739[16], i739[17], 0, i738, '_cardDracone3')
-  request.r(i739[18], i739[19], 0, i738, '_winDefeat')
-  request.r(i739[20], i739[21], 0, i738, '_winFinal')
-  request.r(i739[22], i739[23], 0, i738, '_particleSystem1')
-  request.r(i739[24], i739[25], 0, i738, '_particleSystem2')
-  request.r(i739[26], i739[27], 0, i738, '_particleSystem3')
-  request.r(i739[28], i739[29], 0, i738, '_particleSystem4')
-  request.r(i739[30], i739[31], 0, i738, '_particleSystem5')
-  request.r(i739[32], i739[33], 0, i738, '_particleSystem6')
-  request.r(i739[34], i739[35], 0, i738, '_particleSystem7')
-  request.r(i739[36], i739[37], 0, i738, '_particleSystem8')
-  request.r(i739[38], i739[39], 0, i738, '_particleSystem9')
-  request.r(i739[40], i739[41], 0, i738, '_particleButtun')
-  request.r(i739[42], i739[43], 0, i738, '_particleDragon')
-  request.r(i739[44], i739[45], 0, i738, '_layer')
-  request.r(i739[46], i739[47], 0, i738, '_winInscription')
-  request.r(i739[48], i739[49], 0, i738, '_winInscription2')
-  request.r(i739[50], i739[51], 0, i738, '_winInscription3')
+  request.r(i739[12], i739[13], 0, i738, '_cardEnemye4')
+  request.r(i739[14], i739[15], 0, i738, '_cardEnemye5')
+  request.r(i739[16], i739[17], 0, i738, '_cardDracone1')
+  request.r(i739[18], i739[19], 0, i738, '_cardDracone2')
+  request.r(i739[20], i739[21], 0, i738, '_cardDracone3')
+  request.r(i739[22], i739[23], 0, i738, '_winDefeat')
+  request.r(i739[24], i739[25], 0, i738, '_winFinal')
+  request.r(i739[26], i739[27], 0, i738, '_particleSystem1')
+  request.r(i739[28], i739[29], 0, i738, '_particleSystem2')
+  request.r(i739[30], i739[31], 0, i738, '_particleSystem3')
+  request.r(i739[32], i739[33], 0, i738, '_particleSystem4')
+  request.r(i739[34], i739[35], 0, i738, '_particleSystem5')
+  request.r(i739[36], i739[37], 0, i738, '_particleSystem6')
+  request.r(i739[38], i739[39], 0, i738, '_particleSystem7')
+  request.r(i739[40], i739[41], 0, i738, '_particleSystem8')
+  request.r(i739[42], i739[43], 0, i738, '_particleSystem9')
+  request.r(i739[44], i739[45], 0, i738, '_particleSystem10')
+  request.r(i739[46], i739[47], 0, i738, '_particleSystem11')
+  request.r(i739[48], i739[49], 0, i738, '_particleButtun')
+  request.r(i739[50], i739[51], 0, i738, '_particleDragon')
+  request.r(i739[52], i739[53], 0, i738, '_layer')
+  request.r(i739[54], i739[55], 0, i738, '_winInscription')
+  request.r(i739[56], i739[57], 0, i738, '_winInscription2')
+  request.r(i739[58], i739[59], 0, i738, '_winInscription3')
   return i738
 }
 
@@ -2369,7 +2373,7 @@ Deserializers.productName = "CardsDragons";
 
 Deserializers.lunaInitializationTime = "04/25/2025 11:02:07";
 
-Deserializers.lunaDaysRunning = "18.8";
+Deserializers.lunaDaysRunning = "21.0";
 
 Deserializers.lunaVersion = "6.3.0";
 
@@ -2425,7 +2429,7 @@ Deserializers.graphicsConstraint = 28;
 
 Deserializers.linearColorSpace = false;
 
-Deserializers.buildID = "cfe5cfcb-1de0-4b6c-b1bf-88dbb62fbf10";
+Deserializers.buildID = "93cb1327-c224-464e-9915-1f399d7dfe30";
 
 Deserializers.runtimeInitializeOnLoadInfos = [[["UnityEngine","Rendering","DebugUpdater","RuntimeInit"],["UnityEngine","Experimental","Rendering","ScriptableRuntimeReflectionSystemSettings","ScriptingDirtyReflectionSystemInstance"]],[["Unity","VisualScripting","RuntimeVSUsageUtility","RuntimeInitializeOnLoadBeforeSceneLoad"]],[["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"],["$BurstDirectCallInitializer","Initialize"]],[["UnityEngine","Experimental","Rendering","XRSystem","XRSystemInit"]],[]];
 

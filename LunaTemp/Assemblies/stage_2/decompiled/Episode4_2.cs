@@ -34,6 +34,12 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 	private GameObject _cardEnemye3;
 
 	[SerializeField]
+	private GameObject _cardEnemye4;
+
+	[SerializeField]
+	private GameObject _cardEnemye5;
+
+	[SerializeField]
 	private GameObject _cardDracone1;
 
 	[SerializeField]
@@ -74,6 +80,12 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 
 	[SerializeField]
 	private ParticleSystem _particleSystem9;
+
+	[SerializeField]
+	private ParticleSystem _particleSystem10;
+
+	[SerializeField]
+	private ParticleSystem _particleSystem11;
 
 	[SerializeField]
 	private ParticleSystem _particleButtun;
@@ -184,8 +196,8 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 			yield return StartCoroutine(ReturnToOriginalPosition(_cardEnemye1.GetComponent<RectTransform>(), info1.State));
 			Object.Destroy(info1);
 		}
-		yield return StartCoroutine(AnimateAttack(_cardDracone3, _cardEnemye1, _particleSystem3));
-		_cardEnemye1.SetActive(false);
+		yield return StartCoroutine(AnimateAttack(_cardDracone3, _cardEnemye4, _particleSystem10));
+		_cardEnemye4.SetActive(false);
 		yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone3, _particleSystem4, false));
 		_cardDracone3.SetActive(false);
 		if (_cardDracone4 != null)
@@ -200,7 +212,7 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 			else
 			{
 				yield return StartCoroutine(AnimateAttack(_cardEnemye2, _cardDracone4.gameObject, null, false));
-				CardEnemy cardEnemy3 = _cardEnemye2.GetComponent<CardEnemy>();
+				CardEnemy cardEnemy3 = _cardEnemye3.GetComponent<CardEnemy>();
 				cardEnemy3._particleSystem.Play();
 				_cardDracone4.gameObject.SetActive(false);
 			}
@@ -212,8 +224,8 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 			}
 			if (_cardDracone5 != null)
 			{
-				yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye2, _particleSystem8));
-				_cardEnemye2.SetActive(false);
+				yield return StartCoroutine(AnimateAttack(_cardDracone5.gameObject, _cardEnemye5, _particleSystem11));
+				_cardEnemye5.SetActive(false);
 				if (_cardDracone5 != null)
 				{
 					if (_two)
@@ -226,7 +238,7 @@ public class Episode4_2 : MonoBehaviour, IPointerClickHandler, IEventSystemHandl
 					else
 					{
 						yield return StartCoroutine(AnimateAttack(_cardEnemye3, _cardDracone5.gameObject, null));
-						CardEnemy cardEnemy = _cardEnemye3.GetComponent<CardEnemy>();
+						CardEnemy cardEnemy = _cardEnemye2.GetComponent<CardEnemy>();
 						cardEnemy._particleSystem.Play();
 						_cardDracone5.gameObject.SetActive(false);
 					}
